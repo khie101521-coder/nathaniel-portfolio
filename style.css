@@ -933,3 +933,94 @@ body::after{
     animation:none !important;
   }
 }
+
+
+
+/* FINAL CAROUSEL TRANSPARENCY FIX
+   Remove every explicit black/dark placeholder background behind portfolio carousels.
+   Keep media, arrows, captions, dots, and spacing unchanged. */
+
+/* Carousel/slide wrappers */
+.works,
+.works .short-block,
+.carousel,
+.carousel .slides,
+.carousel .slide,
+.portrait-carousel,
+.portrait-carousel .slides,
+.portrait-carousel .slide,
+.thumbnail-gallery,
+.thumbnail-gallery .slides,
+.thumbnail-gallery .slide,
+.brand-window,
+.brand-track,
+.brand-group{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+
+/* Media placeholder surfaces */
+.screen,
+.works .screen,
+.portrait-carousel .screen,
+.thumbnail-gallery .screen,
+.screen-one,
+.screen-two,
+.screen-three,
+.screen-four,
+.screen-five,
+.screen-six{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+
+/* Remove any dark decorative layers attached to carousel placeholders */
+.screen::before,
+.screen:before,
+.screen::after,
+.screen:after,
+.carousel::before,
+.carousel:before,
+.carousel::after,
+.carousel:after,
+.slides::before,
+.slides:before,
+.slides::after,
+.slides:after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+/* Do not create a black fill behind actual carousel media */
+.screen img,
+.screen video,
+.carousel img,
+.carousel video,
+.thumbnail-gallery img,
+.thumbnail-gallery video{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+
+/* Caption/dot area stays fully transparent */
+.slide-caption,
+.dots,
+.carousel-status,
+.rail-heading{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+
+/* Remove section-level dark fills that can appear as horizontal black bands */
+.dtc-videos,
+.motion-videos,
+.ai-assisted-videos,
+.ugc-videos,
+.pru-videos,
+.long-form-videos,
+.short-form-videos{
+  background:transparent !important;
+  background-color:transparent !important;
+}
