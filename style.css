@@ -1024,3 +1024,73 @@ body::after{
   background:transparent !important;
   background-color:transparent !important;
 }
+
+
+
+/* TRUE BACKGROUND LAYER FIX
+   Put the animated glow above the html base and below all site content,
+   instead of behind the body's solid dark background. */
+
+html{
+  background:#0b0e13 !important;
+}
+
+body{
+  position:relative;
+  isolation:isolate;
+  min-height:100%;
+  background:transparent !important;
+}
+
+/* Animated glow layer must sit ABOVE the html base, not behind body background */
+body::before{
+  z-index:0 !important;
+}
+
+/* Vignette stays with the glow layer */
+body::after{
+  z-index:0 !important;
+}
+
+/* All actual page content sits above the glow */
+body > *{
+  position:relative;
+  z-index:1;
+}
+
+/* Force all portfolio timeline/sections to reveal the site-wide glow */
+main,
+.section,
+.works,
+.short-block,
+.carousel,
+.carousel .slides,
+.carousel .slide,
+.portrait-carousel,
+.thumbnail-gallery,
+.brands,
+.clients,
+.about,
+.achievement,
+.achievements,
+.static-ads,
+.paid-ads,
+.testimonials,
+.contact,
+footer{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+
+/* Explicitly remove any residual dark strip beneath carousel media */
+.carousel,
+.carousel .slides,
+.carousel .slide,
+.slide-caption,
+.dots,
+.carousel-status,
+.rail-heading{
+  box-shadow:none !important;
+  background:transparent !important;
+  background-color:transparent !important;
+}
