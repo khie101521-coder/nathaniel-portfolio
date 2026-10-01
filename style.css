@@ -530,3 +530,165 @@ main,
     background-attachment:scroll;
   }
 }
+
+
+
+/* FINAL FIX: remove the large decorative circle/rings from the hero right side only */
+.hero::before,
+.hero:before,
+.hero::after,
+.hero:after{
+  content:none !important;
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:none !important;
+  box-shadow:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+
+/* Keep the selected-result card arrow/link untouched */
+.hero-proof > a{
+  display:flex !important;
+  position:relative !important;
+  z-index:3 !important;
+}
+
+
+
+/* FINAL FIXED 3-GLOW SITE BACKGROUND
+   Fixed blue upper-left, purple upper-right, orange lower-middle.
+   These stay visually stationary while the page scrolls. */
+
+html{
+  background:#0b0e13 !important;
+}
+
+body{
+  position:relative;
+  min-height:100%;
+  background:#0b0e13 !important;
+}
+
+/* Main fixed glow layer */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 7% 12%,
+      rgba(72,190,235,.34) 0%,
+      rgba(72,190,235,.20) 18%,
+      rgba(72,190,235,.10) 32%,
+      rgba(72,190,235,.035) 46%,
+      transparent 60%),
+
+    radial-gradient(circle at 91% 13%,
+      rgba(128,92,215,.31) 0%,
+      rgba(128,92,215,.18) 18%,
+      rgba(128,92,215,.09) 32%,
+      rgba(128,92,215,.03) 46%,
+      transparent 60%),
+
+    radial-gradient(circle at 50% 78%,
+      rgba(236,154,72,.25) 0%,
+      rgba(236,154,72,.14) 18%,
+      rgba(236,154,72,.07) 32%,
+      rgba(236,154,72,.025) 46%,
+      transparent 62%),
+
+    linear-gradient(180deg,#111318 0%,#0b0e13 100%);
+}
+
+/* Soft cinematic darkening so glows blend instead of looking like hard circles */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at center,
+      transparent 42%,
+      rgba(0,0,0,.10) 70%,
+      rgba(0,0,0,.26) 100%);
+}
+
+/* Keep the page sections transparent so the fixed glow remains visible everywhere */
+main,
+.hero,
+.featured-work,
+.works,
+.short-block,
+.brands,
+.clients,
+.about,
+.achievement,
+.achievements,
+.static-ads,
+.paid-ads,
+.testimonials,
+.contact,
+footer{
+  background:transparent !important;
+}
+
+/* Do not restore the large hero rings */
+.hero::before,
+.hero:before,
+.hero::after,
+.hero:after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* Do not touch the selected-result arrow/link */
+.hero-proof > a{
+  display:flex !important;
+  position:relative !important;
+  z-index:3 !important;
+}
+
+/* Remove only the green decorative glow/circle inside the result card */
+.hero-proof::after,
+.hero-proof:after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+/* Mobile: same fixed layout, slightly softer to avoid overpowering content */
+@media(max-width:640px){
+  body::before{
+    background:
+      radial-gradient(circle at 5% 10%,
+        rgba(72,190,235,.27) 0%,
+        rgba(72,190,235,.14) 22%,
+        rgba(72,190,235,.055) 38%,
+        transparent 58%),
+
+      radial-gradient(circle at 95% 12%,
+        rgba(128,92,215,.24) 0%,
+        rgba(128,92,215,.12) 22%,
+        rgba(128,92,215,.05) 38%,
+        transparent 58%),
+
+      radial-gradient(circle at 50% 78%,
+        rgba(236,154,72,.19) 0%,
+        rgba(236,154,72,.095) 22%,
+        rgba(236,154,72,.04) 38%,
+        transparent 60%),
+
+      linear-gradient(180deg,#111318 0%,#0b0e13 100%);
+  }
+}
