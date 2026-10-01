@@ -1094,3 +1094,45 @@ footer{
   background:transparent !important;
   background-color:transparent !important;
 }
+
+
+
+/* FINAL CAROUSEL SHADOW CLEANUP
+   The remaining dark/black areas were caused by heavy media box-shadows.
+   Remove those shadows so the ambient background remains visible around captions and dots. */
+
+.screen,
+.works .screen,
+.portrait-carousel .screen,
+.thumbnail-gallery .screen,
+.landscape .screen,
+.tall .screen{
+  background:transparent !important;
+  background-color:transparent !important;
+  box-shadow:none !important;
+  filter:none !important;
+}
+
+/* No shadow from active/side slides either */
+.slide,
+.slide.show,
+.slide.is-before,
+.slide.is-after{
+  box-shadow:none !important;
+  filter:none !important;
+}
+
+/* Keep the actual thumbnail/video itself unchanged */
+.screen img,
+.screen video{
+  box-shadow:none !important;
+}
+
+/* Ensure the caption/dot region remains completely clear */
+.slide-caption,
+.dots,
+.carousel-status{
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:none !important;
+}
