@@ -341,3 +341,24 @@ footer{border-top:1px solid #ffffff21;padding:40px max(4%,calc((100vw - 1320px)/
     padding:0 !important;
   }
 }
+
+
+
+/* Nathaniel Works ambient background glow */
+body{
+  background:
+    radial-gradient(circle at 84% 12%, rgba(255,153,64,.075), transparent 26%),
+    radial-gradient(circle at 18% 58%, rgba(25,250,21,.040), transparent 30%),
+    #131416 !important;
+  background-attachment: fixed;
+}
+
+@media(max-width:640px){
+  body{
+    background:
+      radial-gradient(circle at 78% 10%, rgba(255,153,64,.06), transparent 30%),
+      radial-gradient(circle at 18% 52%, rgba(25,250,21,.032), transparent 34%),
+      #131416 !important;
+    background-attachment: scroll;
+  }
+}
