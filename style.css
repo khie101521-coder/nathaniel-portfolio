@@ -343,21 +343,24 @@ footer{border-top:1px solid #ffffff21;padding:40px max(4%,calc((100vw - 1320px)/
 }
 
 
-/* Nathaniel Works ambient background inspired by the reference site */
+/* Stronger visible ambient background */
 body{
   background:
-    radial-gradient(ellipse 44% 32% at 0% 8%,
-      rgba(88, 194, 214, .26) 0%,
-      rgba(88, 194, 214, .13) 38%,
-      transparent 74%),
-    radial-gradient(ellipse 42% 34% at 100% 36%,
-      rgba(125, 95, 200, .22) 0%,
-      rgba(125, 95, 200, .10) 40%,
+    radial-gradient(ellipse 52% 38% at 0% 10%,
+      rgba(82, 196, 220, .34) 0%,
+      rgba(82, 196, 220, .18) 34%,
+      rgba(82, 196, 220, .07) 55%,
       transparent 76%),
-    radial-gradient(ellipse 30% 24% at 42% 94%,
-      rgba(228, 154, 76, .14) 0%,
-      rgba(228, 154, 76, .06) 42%,
+    radial-gradient(ellipse 46% 38% at 100% 40%,
+      rgba(126, 95, 205, .30) 0%,
+      rgba(126, 95, 205, .16) 36%,
+      rgba(126, 95, 205, .06) 58%,
       transparent 78%),
+    radial-gradient(ellipse 38% 28% at 42% 92%,
+      rgba(232, 157, 76, .24) 0%,
+      rgba(232, 157, 76, .12) 38%,
+      rgba(232, 157, 76, .04) 60%,
+      transparent 80%),
     linear-gradient(180deg, #101217 0%, #0b0e13 100%) !important;
   background-attachment: fixed;
   position: relative;
@@ -370,8 +373,7 @@ body::before{
   pointer-events:none;
   z-index:0;
   background:
-    linear-gradient(180deg, rgba(255,255,255,.006), transparent 18%, transparent 84%, rgba(0,0,0,.08)),
-    radial-gradient(ellipse at center, transparent 46%, rgba(0,0,0,.22) 100%);
+    radial-gradient(ellipse at center, transparent 54%, rgba(0,0,0,.13) 100%);
 }
 
 body > *{
@@ -379,22 +381,152 @@ body > *{
   z-index:1;
 }
 
+/* Remove the large decorative hero circle/rings */
+.hero::before,
+.hero:before{
+  display:none !important;
+  content:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+  background:none !important;
+}
+
+/* Keep the result card clean too */
+.hero-proof::after,
+.hero-proof:after{
+  opacity:.55;
+}
+
 @media(max-width:640px){
   body{
     background:
-      radial-gradient(ellipse 60% 28% at 0% 6%,
-        rgba(88, 194, 214, .20) 0%,
-        rgba(88, 194, 214, .09) 40%,
+      radial-gradient(ellipse 66% 30% at 0% 7%,
+        rgba(82, 196, 220, .27) 0%,
+        rgba(82, 196, 220, .13) 40%,
         transparent 76%),
-      radial-gradient(ellipse 54% 30% at 100% 34%,
-        rgba(125, 95, 200, .16) 0%,
-        rgba(125, 95, 200, .07) 42%,
+      radial-gradient(ellipse 58% 32% at 100% 34%,
+        rgba(126, 95, 205, .23) 0%,
+        rgba(126, 95, 205, .10) 42%,
         transparent 78%),
-      radial-gradient(ellipse 42% 20% at 48% 96%,
-        rgba(228, 154, 76, .10) 0%,
-        rgba(228, 154, 76, .04) 44%,
+      radial-gradient(ellipse 50% 24% at 48% 94%,
+        rgba(232, 157, 76, .18) 0%,
+        rgba(232, 157, 76, .08) 44%,
         transparent 80%),
       linear-gradient(180deg, #101217 0%, #0b0e13 100%) !important;
+    background-attachment:scroll;
+  }
+}
+
+
+
+/* Remove only the green decorative circle inside the selected-result card.
+   Keep the arrow/link and all other card content unchanged. */
+.hero-proof::after,
+.hero-proof:after{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+
+
+/* FINAL SITE-WIDE DANCEL-STYLE AMBIENT BACKGROUND
+   Broad cyan/teal upper-left, violet/purple right, warm amber lower-center,
+   dark charcoal base, and soft cinematic vignette. */
+html{
+  background:#0d1015;
+}
+
+body{
+  position:relative;
+  isolation:isolate;
+  min-height:100%;
+  background:
+    radial-gradient(ellipse 58% 34% at -4% 8%,
+      rgba(78, 190, 214, .34) 0%,
+      rgba(78, 190, 214, .20) 28%,
+      rgba(78, 190, 214, .09) 50%,
+      transparent 73%),
+    radial-gradient(ellipse 52% 38% at 106% 38%,
+      rgba(118, 90, 196, .30) 0%,
+      rgba(118, 90, 196, .17) 30%,
+      rgba(118, 90, 196, .08) 52%,
+      transparent 76%),
+    radial-gradient(ellipse 40% 26% at 42% 96%,
+      rgba(220, 145, 68, .22) 0%,
+      rgba(220, 145, 68, .12) 34%,
+      rgba(220, 145, 68, .05) 56%,
+      transparent 80%),
+    linear-gradient(180deg,#111318 0%,#0b0e13 100%) !important;
+  background-attachment:fixed;
+}
+
+/* Soft vignette like the reference so the glow fades naturally into charcoal. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse at center,
+      transparent 46%,
+      rgba(0,0,0,.10) 68%,
+      rgba(0,0,0,.30) 100%);
+}
+
+/* Let the page-wide glow remain visible behind major sections. */
+main,
+.hero,
+.featured-work,
+.works,
+.brands,
+.clients,
+.about,
+.achievement,
+.static-ads,
+.paid-ads,
+.contact{
+  background:transparent !important;
+}
+
+/* Preserve cards, media, and content panels; remove only page-level decoration. */
+.hero::before,
+.hero:before{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* Remove only the green decorative circle inside the selected-result card.
+   The case-study arrow/link remains untouched. */
+.hero-proof::after,
+.hero-proof:after{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+
+@media(max-width:640px){
+  body{
+    background:
+      radial-gradient(ellipse 75% 28% at -8% 6%,
+        rgba(78, 190, 214, .27) 0%,
+        rgba(78, 190, 214, .14) 34%,
+        transparent 74%),
+      radial-gradient(ellipse 68% 32% at 108% 34%,
+        rgba(118, 90, 196, .23) 0%,
+        rgba(118, 90, 196, .11) 38%,
+        transparent 76%),
+      radial-gradient(ellipse 56% 22% at 48% 96%,
+        rgba(220, 145, 68, .17) 0%,
+        rgba(220, 145, 68, .08) 40%,
+        transparent 80%),
+      linear-gradient(180deg,#111318 0%,#0b0e13 100%) !important;
     background-attachment:scroll;
   }
 }
