@@ -278,3 +278,66 @@ footer{border-top:1px solid #ffffff21;padding:40px max(4%,calc((100vw - 1320px)/
 .contact{position:relative;overflow:hidden}.contact:before{content:'LET\'S WORK';position:absolute;left:50%;top:34px;transform:translateX(-50%);font-family:'Space Grotesk';font-size:clamp(4.5rem,12vw,11rem);line-height:.85;font-weight:700;letter-spacing:-.07em;color:rgba(255,255,255,.028);white-space:nowrap;pointer-events:none;z-index:0}.contact>*{position:relative;z-index:1}
 @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;gap:45px}.hero-proof{max-width:620px}.featured-grid{grid-template-columns:1fr 1fr}.featured-card:last-child{grid-column:1/-1}.featured-heading{align-items:start}}
 @media(max-width:640px){.hero{padding-top:66px;padding-bottom:64px}.hero:before{display:none}.hero h1{font-size:clamp(2.9rem,14vw,4.5rem)}.hero-actions{display:grid;grid-template-columns:1fr}.hero-primary,.hero-secondary{width:100%}.hero-proof{border-radius:18px}.hero-proof-meta{grid-template-columns:1fr 1fr}.featured-work{padding-top:68px;padding-bottom:68px}.featured-heading{display:block}.featured-heading>p{margin-top:22px}.featured-grid{grid-template-columns:1fr}.featured-card,.featured-card:last-child{grid-column:auto;min-height:250px}.featured-card h3{margin-top:36px}.works{padding-top:70px}.contact:before{top:42px;font-size:clamp(4rem,20vw,7rem)}}
+
+
+/* Contact section polish: more breathing room and softer outer container edges */
+.contact-layout{
+  margin-top:32px;
+  padding:24px;
+}
+
+.contact-layout:before{
+  border-radius:28px;
+}
+
+@media(max-width:640px){
+  .contact-layout{
+    margin-top:24px;
+    padding:16px;
+  }
+
+  .contact-layout:before{
+    border-radius:20px;
+  }
+}
+
+
+
+/* Contact section cleanup: remove the large outer background container */
+.contact-layout{
+  margin-top:32px !important;
+  padding:0 !important;
+  background:transparent !important;
+}
+
+.contact-layout::before,
+.contact-layout:before{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+}
+
+/* Keep only the individual rounded contact cards */
+.email-contact,
+.contact-card{
+  position:relative;
+}
+
+/* Nathaniel Works logo: visually remove the dark image background */
+.logo-mark{
+  width:22px;
+  height:22px;
+  object-fit:contain;
+  display:block;
+  flex:0 0 auto;
+  background:transparent !important;
+  border-radius:0 !important;
+  mix-blend-mode:lighten;
+}
+
+@media(max-width:640px){
+  .contact-layout{
+    margin-top:24px !important;
+    padding:0 !important;
+  }
+}
