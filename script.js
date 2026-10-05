@@ -185,3 +185,42 @@ aboutVideoTabs.forEach((tab,index)=>{
   event.preventDefault();selectAboutVideoTab(aboutVideoTabs[next]);aboutVideoTabs[next].focus();
  });
 });
+
+
+
+/* Mobile swipe navigation for all portfolio carousels */
+document.querySelectorAll('[data-carousel]').forEach(carousel=>{
+  let swipeStartX=0;
+  let swipeStartY=0;
+  let swipeStartTime=0;
+  let blockClickUntil=0;
+
+  carousel.addEventListener('touchstart',event=>{
+    if(event.touches.length!==1)return;
+    swipeStartX=event.touches[0].clientX;
+    swipeStartY=event.touches[0].clientY;
+    swipeStartTime=Date.now();
+  },{passive:true});
+
+  carousel.addEventListener('touchend',event=>{
+    if(!event.changedTouches.length)return;
+    const dx=event.changedTouches[0].clientX-swipeStartX;
+    const dy=event.changedTouches[0].clientY-swipeStartY;
+    const elapsed=Date.now()-swipeStartTime;
+
+    if(Math.abs(dx)>=45 && Math.abs(dx)>Math.abs(dy)*1.15 && elapsed<900){
+      const button=dx<0?carousel.querySelector('.next'):carousel.querySelector('.previous');
+      if(button){
+        blockClickUntil=Date.now()+420;
+        button.click();
+      }
+    }
+  },{passive:true});
+
+  carousel.addEventListener('click',event=>{
+    if(Date.now()<blockClickUntil){
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  },true);
+});

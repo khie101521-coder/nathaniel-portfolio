@@ -1136,3 +1136,510 @@ footer{
   box-shadow:none !important;
   filter:none !important;
 }
+
+
+
+/* =========================================================
+   NATHANIEL WORKS — PREVIEW UX / CONTENT UPGRADE
+   Preview only. Not yet published.
+   ========================================================= */
+
+:root{
+  --nw-panel:rgba(255,255,255,.045);
+  --nw-border:rgba(255,255,255,.12);
+  --nw-muted:#b7bdc1;
+}
+
+/* More consistent section rhythm */
+.section{
+  padding-top:clamp(76px,8vw,112px);
+  padding-bottom:clamp(76px,8vw,112px);
+}
+.section-title,.featured-heading,.nw-section-head{max-width:1240px;margin-left:auto;margin-right:auto}
+.works{overflow:hidden}
+
+/* Result metrics */
+.nw-metrics{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;
+  padding-top:18px;
+  padding-bottom:18px;
+}
+.nw-metrics article{
+  min-height:132px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:24px 30px;
+  border-block:1px solid rgba(255,255,255,.10);
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.nw-metrics article:last-child{border-right:0}
+.nw-metrics strong{
+  display:block;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(1.65rem,2.3vw,2.7rem);
+  letter-spacing:-.045em;
+  color:#fff;
+  margin-bottom:7px;
+}
+.nw-metrics span{font-size:12px;line-height:1.5;color:#9fa6aa;max-width:210px}
+
+/* Services */
+.nw-section-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);
+  align-items:end;
+  gap:42px;
+  margin-bottom:42px;
+}
+.nw-section-head h2{
+  font-size:clamp(2.7rem,5vw,5.2rem);
+  line-height:.98;
+  margin:0;
+  max-width:900px;
+}
+.nw-section-head>p{color:var(--nw-muted);line-height:1.65;margin:0 0 5px}
+.nw-service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  max-width:1240px;
+  margin:0 auto;
+}
+.nw-service-card{
+  min-height:320px;
+  padding:32px;
+  border:1px solid var(--nw-border);
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  backdrop-filter:blur(10px);
+  display:flex;
+  flex-direction:column;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.nw-service-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(25,250,21,.35);
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022));
+}
+.nw-service-number{font:700 11px/1 'Space Grotesk';letter-spacing:.22em;color:var(--lime);margin-bottom:54px}
+.nw-service-card h3{font-size:clamp(1.7rem,2.4vw,2.4rem);margin:0 0 14px;letter-spacing:-.04em}
+.nw-service-card p{color:#b5bbc0;line-height:1.65;margin-bottom:28px;max-width:580px}
+.nw-service-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.nw-service-tags b{
+  font-size:10px;letter-spacing:.08em;font-weight:600;
+  padding:8px 10px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#d9dddf
+}
+
+/* Featured work stronger case-study framing */
+.nw-featured-grid .featured-card{display:flex;flex-direction:column}
+.nw-featured-grid .featured-card p{max-width:480px}
+.nw-featured-meta{
+  margin-top:auto;
+  padding-top:28px;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  border-top:1px solid rgba(255,255,255,.10);
+}
+.nw-featured-meta small{font-size:9px;letter-spacing:.18em;color:#8d9498}
+.nw-featured-meta strong{font-size:13px!important;letter-spacing:.04em!important;margin:0!important}
+.nw-featured-grid .featured-card em{
+  font-style:normal;
+  margin-top:18px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.12em;
+  color:var(--lime)
+}
+
+/* Cleaner carousel treatment */
+.carousel-block{margin-top:42px}
+.carousel-block.short-block{margin-top:72px}
+.rail-heading{max-width:1120px;margin-left:auto;margin-right:auto;line-height:1.45}
+.carousel{
+  touch-action:pan-y;
+  overscroll-behavior-x:contain;
+  -webkit-user-select:none;
+  user-select:none;
+}
+.carousel .slides{touch-action:pan-y}
+.screen{
+  background:transparent!important;
+  box-shadow:none!important;
+  border:1px solid rgba(255,255,255,.08);
+}
+.slide-caption{color:#aeb5b9}
+.dots button{transition:width .2s ease,background .2s ease}
+.arrow{
+  background:rgba(20,23,26,.68);
+  backdrop-filter:blur(14px);
+  border-color:rgba(255,255,255,.17);
+}
+.nw-swipe-note{
+  display:none;
+  max-width:1240px;
+  margin:0 auto 18px;
+  color:var(--lime);
+  font-size:9px;
+  letter-spacing:.18em;
+  font-weight:700;
+}
+
+/* Tools */
+.nw-tools{padding-top:90px}
+.nw-tool-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  max-width:1240px;
+  margin:0 auto;
+}
+.nw-tool-grid article{
+  min-height:210px;
+  padding:26px;
+  border:1px solid var(--nw-border);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+}
+.nw-tool-grid article span{font-size:9px;letter-spacing:.18em;color:var(--lime);font-weight:700}
+.nw-tool-grid h3{font-size:1.35rem;margin:34px 0 10px;letter-spacing:-.035em}
+.nw-tool-grid p{font-size:13px;line-height:1.6;color:#aeb5b9;margin:0}
+.nw-tool-grid .nw-tool-wide{grid-column:span 2}
+
+/* About CTA */
+.nw-about-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.nw-about-actions a{
+  padding:13px 16px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  font-size:10px;
+  letter-spacing:.10em;
+  font-weight:700
+}
+.nw-about-actions a:first-child{background:var(--lime);color:#101510;border-color:var(--lime)}
+.nw-about-actions a:hover{border-color:var(--lime)}
+
+/* Contact CTA */
+.nw-contact-note{
+  max-width:640px;
+  margin:0 auto 30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.nw-contact-note span{font-size:9px;letter-spacing:.18em;color:var(--lime);font-weight:700}
+.nw-contact-note strong{font-size:12px;color:#d5d9da;font-weight:500}
+.nw-contact-spacer{display:none!important}
+
+/* Mobile responsiveness pass */
+@media(max-width:900px){
+  .nw-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nw-metrics article:nth-child(2){border-right:0}
+  .nw-section-head{grid-template-columns:1fr;gap:20px}
+  .nw-service-grid{grid-template-columns:1fr 1fr}
+  .nw-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:640px){
+  body{overflow-x:hidden}
+  .site-header{
+    width:calc(100% - 20px);
+    top:10px;
+    margin-top:10px;
+    padding:0 14px 0 16px;
+    border-radius:18px
+  }
+  .logo{max-width:210px}
+  .logo span:last-child{font-size:10px;letter-spacing:.11em}
+  .navigation{top:66px;left:0;right:0;padding:18px;border-radius:16px}
+  .section{
+    padding-left:18px!important;
+    padding-right:18px!important;
+    padding-top:64px!important;
+    padding-bottom:64px!important;
+  }
+  .hero{
+    padding-top:58px!important;
+    padding-bottom:44px!important;
+    gap:32px!important;
+  }
+  .hero .kicker{font-size:10px;line-height:1.5}
+  .hero h1{
+    font-size:clamp(2.7rem,13vw,4rem)!important;
+    line-height:.94!important;
+    max-width:100%;
+  }
+  .hero-copy>p{font-size:14px;line-height:1.65}
+  .hero-services{gap:7px}
+  .hero-services span{font-size:10px;padding:8px 10px}
+  .hero-proof{padding:22px!important}
+  .hero-proof>strong{font-size:clamp(2.2rem,12vw,3.4rem)!important}
+  .hero-proof-meta{gap:10px}
+  .hero-actions{gap:10px}
+  .hero-primary,.hero-secondary{min-height:50px;justify-content:center}
+
+  .nw-metrics{
+    grid-template-columns:1fr 1fr;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    gap:0;
+  }
+  .nw-metrics article{min-height:112px;padding:18px 12px;border-right:0}
+  .nw-metrics article:nth-child(odd){border-right:1px solid rgba(255,255,255,.08)}
+  .nw-metrics strong{font-size:1.45rem}
+  .nw-metrics span{font-size:10px;line-height:1.45}
+
+  .nw-section-head{display:block;margin-bottom:28px}
+  .nw-section-head h2{font-size:clamp(2.25rem,11vw,3.25rem);line-height:1.02}
+  .nw-section-head>p{margin-top:18px;font-size:13px}
+  .nw-service-grid{grid-template-columns:1fr;gap:12px}
+  .nw-service-card{min-height:0;padding:22px;border-radius:18px}
+  .nw-service-number{margin-bottom:34px}
+  .nw-service-card h3{font-size:1.65rem}
+  .nw-service-card p{font-size:13px}
+  .featured-heading h2{font-size:clamp(2.25rem,11vw,3.2rem)}
+  .featured-card{padding:24px!important;border-radius:18px!important}
+  .nw-featured-meta{align-items:flex-start;flex-direction:column;gap:6px}
+
+  .works{padding-left:0!important;padding-right:0!important}
+  .works>.section-title,.works>.nw-swipe-note,.rail-heading{
+    margin-left:18px!important;margin-right:18px!important;
+  }
+  .nw-swipe-note{display:block;margin-bottom:8px!important}
+  .rail-heading{margin-top:34px!important;margin-bottom:16px!important;font-size:9px}
+  .carousel-block{margin-top:26px}
+  .carousel-block.short-block{margin-top:50px}
+  .carousel{padding-bottom:4px}
+  .carousel .slides{width:100%!important}
+  .landscape .slides{height:clamp(190px,58vw,255px)!important}
+  .landscape .slide{width:76%!important}
+  .landscape .slide.is-before{left:-3%!important}
+  .landscape .slide.is-after{left:103%!important}
+  .portrait-carousel .slides{height:clamp(360px,104vw,460px)!important}
+  .portrait-carousel .slide{width:58%!important}
+  .portrait-carousel .slide.is-before{left:2%!important}
+  .portrait-carousel .slide.is-after{left:98%!important}
+  .carousel .arrow{
+    width:34px!important;height:34px!important;
+    top:48%!important;
+    opacity:.82
+  }
+  .previous{left:7px!important}
+  .next{right:7px!important}
+  .slide-caption{font-size:11px!important;line-height:1.45;padding:0 8px}
+  .dots{margin-top:8px;gap:6px}
+  .dots button{width:6px;height:6px}
+  .dots button.active{width:24px}
+  .screen{border-radius:14px!important}
+  .brand-window{margin-top:32px}
+
+  .nw-tool-grid{grid-template-columns:1fr;gap:10px}
+  .nw-tool-grid .nw-tool-wide{grid-column:auto}
+  .nw-tool-grid article{min-height:0;padding:22px}
+  .nw-tool-grid h3{margin-top:26px}
+
+  .about-with-loom{gap:34px!important}
+  .about-intro-copy{gap:24px!important}
+  .about-photo{width:min(72vw,250px)!important;height:min(72vw,250px)!important;margin:0 auto}
+  .about-copy{text-align:left}
+  .about-copy h2{font-size:clamp(2.35rem,11vw,3.2rem)}
+  .about-copy p{font-size:14px}
+  .nw-about-actions{display:grid;grid-template-columns:1fr}
+  .nw-about-actions a{text-align:center}
+
+  .contact h2{font-size:clamp(2.45rem,12vw,3.45rem)!important;line-height:1.02}
+  .contact h2 br{display:none}
+  .contact>p{font-size:13px;margin-bottom:24px}
+  .nw-contact-note{display:block;text-align:left;margin-bottom:24px}
+  .nw-contact-note span{display:block;margin-bottom:7px}
+  .nw-contact-note strong{display:block;line-height:1.55}
+  .contact-layout{margin-top:20px!important}
+  .contact-card{padding:15px!important}
+  .contact-details strong{font-size:12px!important;overflow-wrap:anywhere}
+  footer{padding-left:18px!important;padding-right:18px!important;gap:12px!important}
+}
+
+/* Touch users: reduce hover-only assumptions */
+@media(hover:none) and (pointer:coarse){
+  .nw-service-card:hover{transform:none}
+  .slide:hover .play{transform:translate(-50%,-50%)}
+  .carousel .arrow{opacity:.72}
+}
+
+
+
+/* =========================================================
+   HEADER TYPE SCALE — closer to the Dancel Works reference
+   Larger wordmark + more readable nav on desktop and mobile.
+   PREVIEW ONLY.
+   ========================================================= */
+
+.site-header{
+  width:min(1080px,calc(100% - 40px));
+  height:72px;
+  padding:0 24px 0 28px;
+  gap:34px;
+}
+
+/* NATHANIEL WORKS wordmark */
+.site-header .logo,
+footer .logo{
+  gap:11px;
+  font-size:19px;
+  line-height:1;
+  letter-spacing:.19em;
+  font-weight:600;
+}
+
+.site-header .logo-mark,
+footer .logo-mark{
+  width:24px;
+  height:24px;
+}
+
+/* Header navigation */
+.site-header .navigation{
+  gap:34px;
+  font-size:11px;
+  line-height:1;
+  letter-spacing:.22em;
+  font-weight:700;
+}
+
+.site-header .navigation .book-button{
+  font-size:11px;
+  padding:16px 25px;
+  letter-spacing:.08em;
+}
+
+/* Large desktop: keep the header proportion visually strong */
+@media(min-width:1200px){
+  .site-header{
+    width:min(1140px,calc(100% - 48px));
+    height:74px;
+  }
+
+  .site-header .logo{
+    font-size:20px;
+  }
+
+  .site-header .logo-mark{
+    width:25px;
+    height:25px;
+  }
+
+  .site-header .navigation{
+    font-size:11.5px;
+    gap:38px;
+  }
+
+  .site-header .navigation .book-button{
+    font-size:11.5px;
+  }
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .site-header{
+    width:calc(100% - 24px);
+    height:68px;
+    padding:0 18px 0 20px;
+    gap:20px;
+  }
+
+  .site-header .logo{
+    font-size:16px;
+    letter-spacing:.16em;
+  }
+
+  .site-header .logo-mark{
+    width:22px;
+    height:22px;
+  }
+
+  .site-header .navigation{
+    gap:18px;
+    font-size:10.5px;
+  }
+
+  .site-header .navigation .book-button{
+    padding:14px 18px;
+    font-size:10.5px;
+  }
+}
+
+/* Mobile */
+@media(max-width:640px){
+  .site-header{
+    width:calc(100% - 18px);
+    height:64px;
+    top:9px;
+    margin-top:9px;
+    padding:0 15px 0 16px;
+    border-radius:18px;
+  }
+
+  .site-header .logo{
+    gap:9px;
+    max-width:none;
+    font-size:14px;
+    letter-spacing:.14em;
+    font-weight:650;
+  }
+
+  .site-header .logo span:last-child{
+    font-size:14px !important;
+    letter-spacing:.14em !important;
+  }
+
+  .site-header .logo-mark{
+    width:21px;
+    height:21px;
+  }
+
+  .site-header .menu-toggle{
+    font-size:25px;
+    line-height:1;
+    padding:6px;
+  }
+
+  .site-header .navigation{
+    top:71px;
+    padding:20px;
+    gap:18px;
+  }
+
+  .site-header .navigation a:not(.book-button){
+    font-size:13px;
+    letter-spacing:.16em;
+  }
+
+  .site-header .navigation .book-button{
+    font-size:12px;
+    padding:15px 18px;
+  }
+}
+
+/* Very small phones: keep wordmark readable without wrapping */
+@media(max-width:390px){
+  .site-header .logo{
+    font-size:12.5px;
+    letter-spacing:.12em;
+  }
+
+  .site-header .logo span:last-child{
+    font-size:12.5px !important;
+    letter-spacing:.12em !important;
+  }
+
+  .site-header .logo-mark{
+    width:20px;
+    height:20px;
+  }
+}
