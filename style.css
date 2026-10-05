@@ -1139,26 +1139,54 @@ footer{
 
 
 
-/* =========================================================
-   NATHANIEL WORKS — PREVIEW UX / CONTENT UPGRADE
-   Preview only. Not yet published.
-   ========================================================= */
+/* NATHANIEL WORKS — FINAL APPROVED UX UPGRADE */
 
-:root{
-  --nw-panel:rgba(255,255,255,.045);
-  --nw-border:rgba(255,255,255,.12);
-  --nw-muted:#b7bdc1;
-}
-
-/* More consistent section rhythm */
+/* Consistent page rhythm */
 .section{
   padding-top:clamp(76px,8vw,112px);
   padding-bottom:clamp(76px,8vw,112px);
 }
-.section-title,.featured-heading,.nw-section-head{max-width:1240px;margin-left:auto;margin-right:auto}
+.section-title,.featured-heading,.nw-section-head{
+  max-width:1240px;
+  margin-left:auto;
+  margin-right:auto;
+}
 .works{overflow:hidden}
 
-/* Result metrics */
+/* Stronger header scale inspired by the reference hierarchy */
+.site-header{
+  width:min(1080px,calc(100% - 40px));
+  height:72px;
+  padding:0 24px 0 28px;
+  gap:34px;
+}
+.site-header .logo,
+footer .logo{
+  gap:11px;
+  font-size:19px;
+  line-height:1;
+  letter-spacing:.19em;
+  font-weight:600;
+}
+.site-header .logo-mark,
+footer .logo-mark{
+  width:24px;
+  height:24px;
+}
+.site-header .navigation{
+  gap:34px;
+  font-size:11px;
+  line-height:1;
+  letter-spacing:.22em;
+  font-weight:700;
+}
+.site-header .navigation .book-button{
+  font-size:11px;
+  padding:16px 25px;
+  letter-spacing:.08em;
+}
+
+/* Metrics strip */
 .nw-metrics{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
@@ -1184,7 +1212,12 @@ footer{
   color:#fff;
   margin-bottom:7px;
 }
-.nw-metrics span{font-size:12px;line-height:1.5;color:#9fa6aa;max-width:210px}
+.nw-metrics span{
+  font-size:12px;
+  line-height:1.5;
+  color:#9fa6aa;
+  max-width:210px;
+}
 
 /* Services */
 .nw-section-head{
@@ -1200,7 +1233,11 @@ footer{
   margin:0;
   max-width:900px;
 }
-.nw-section-head>p{color:var(--nw-muted);line-height:1.65;margin:0 0 5px}
+.nw-section-head>p{
+  color:#b7bdc1;
+  line-height:1.65;
+  margin:0 0 5px;
+}
 .nw-service-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1211,7 +1248,7 @@ footer{
 .nw-service-card{
   min-height:320px;
   padding:32px;
-  border:1px solid var(--nw-border);
+  border:1px solid rgba(255,255,255,.12);
   border-radius:22px;
   background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
   backdrop-filter:blur(10px);
@@ -1224,17 +1261,44 @@ footer{
   border-color:rgba(25,250,21,.35);
   background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022));
 }
-.nw-service-number{font:700 11px/1 'Space Grotesk';letter-spacing:.22em;color:var(--lime);margin-bottom:54px}
-.nw-service-card h3{font-size:clamp(1.7rem,2.4vw,2.4rem);margin:0 0 14px;letter-spacing:-.04em}
-.nw-service-card p{color:#b5bbc0;line-height:1.65;margin-bottom:28px;max-width:580px}
-.nw-service-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.nw-service-number{
+  font:700 11px/1 'Space Grotesk';
+  letter-spacing:.22em;
+  color:var(--lime);
+  margin-bottom:54px;
+}
+.nw-service-card h3{
+  font-size:clamp(1.7rem,2.4vw,2.4rem);
+  margin:0 0 14px;
+  letter-spacing:-.04em;
+}
+.nw-service-card p{
+  color:#b5bbc0;
+  line-height:1.65;
+  margin-bottom:28px;
+  max-width:580px;
+}
+.nw-service-tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:auto;
+}
 .nw-service-tags b{
-  font-size:10px;letter-spacing:.08em;font-weight:600;
-  padding:8px 10px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#d9dddf
+  font-size:10px;
+  letter-spacing:.08em;
+  font-weight:600;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  color:#d9dddf;
 }
 
-/* Featured work stronger case-study framing */
-.nw-featured-grid .featured-card{display:flex;flex-direction:column}
+/* Featured work */
+.nw-featured-grid .featured-card{
+  display:flex;
+  flex-direction:column;
+}
 .nw-featured-grid .featured-card p{max-width:480px}
 .nw-featured-meta{
   margin-top:auto;
@@ -1245,21 +1309,26 @@ footer{
   gap:18px;
   border-top:1px solid rgba(255,255,255,.10);
 }
-.nw-featured-meta small{font-size:9px;letter-spacing:.18em;color:#8d9498}
-.nw-featured-meta strong{font-size:13px!important;letter-spacing:.04em!important;margin:0!important}
+.nw-featured-meta small{
+  font-size:9px;
+  letter-spacing:.18em;
+  color:#8d9498;
+}
+.nw-featured-meta strong{
+  font-size:13px!important;
+  letter-spacing:.04em!important;
+  margin:0!important;
+}
 .nw-featured-grid .featured-card em{
   font-style:normal;
   margin-top:18px;
   font-size:10px;
   font-weight:700;
   letter-spacing:.12em;
-  color:var(--lime)
+  color:var(--lime);
 }
 
-/* Cleaner carousel treatment */
-.carousel-block{margin-top:42px}
-.carousel-block.short-block{margin-top:72px}
-.rail-heading{max-width:1120px;margin-left:auto;margin-right:auto;line-height:1.45}
+/* Mobile swipe hint and carousel polish */
 .carousel{
   touch-action:pan-y;
   overscroll-behavior-x:contain;
@@ -1272,8 +1341,6 @@ footer{
   box-shadow:none!important;
   border:1px solid rgba(255,255,255,.08);
 }
-.slide-caption{color:#aeb5b9}
-.dots button{transition:width .2s ease,background .2s ease}
 .arrow{
   background:rgba(20,23,26,.68);
   backdrop-filter:blur(14px);
@@ -1301,26 +1368,49 @@ footer{
 .nw-tool-grid article{
   min-height:210px;
   padding:26px;
-  border:1px solid var(--nw-border);
+  border:1px solid rgba(255,255,255,.12);
   border-radius:18px;
   background:rgba(255,255,255,.025);
 }
-.nw-tool-grid article span{font-size:9px;letter-spacing:.18em;color:var(--lime);font-weight:700}
-.nw-tool-grid h3{font-size:1.35rem;margin:34px 0 10px;letter-spacing:-.035em}
-.nw-tool-grid p{font-size:13px;line-height:1.6;color:#aeb5b9;margin:0}
+.nw-tool-grid article span{
+  font-size:9px;
+  letter-spacing:.18em;
+  color:var(--lime);
+  font-weight:700;
+}
+.nw-tool-grid h3{
+  font-size:1.35rem;
+  margin:34px 0 10px;
+  letter-spacing:-.035em;
+}
+.nw-tool-grid p{
+  font-size:13px;
+  line-height:1.6;
+  color:#aeb5b9;
+  margin:0;
+}
 .nw-tool-grid .nw-tool-wide{grid-column:span 2}
 
 /* About CTA */
-.nw-about-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.nw-about-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
 .nw-about-actions a{
   padding:13px 16px;
   border:1px solid rgba(255,255,255,.16);
   border-radius:999px;
   font-size:10px;
   letter-spacing:.10em;
-  font-weight:700
+  font-weight:700;
 }
-.nw-about-actions a:first-child{background:var(--lime);color:#101510;border-color:var(--lime)}
+.nw-about-actions a:first-child{
+  background:var(--lime);
+  color:#101510;
+  border-color:var(--lime);
+}
 .nw-about-actions a:hover{border-color:var(--lime)}
 
 /* Contact CTA */
@@ -1333,12 +1423,52 @@ footer{
   gap:14px;
   flex-wrap:wrap;
 }
-.nw-contact-note span{font-size:9px;letter-spacing:.18em;color:var(--lime);font-weight:700}
-.nw-contact-note strong{font-size:12px;color:#d5d9da;font-weight:500}
+.nw-contact-note span{
+  font-size:9px;
+  letter-spacing:.18em;
+  color:var(--lime);
+  font-weight:700;
+}
+.nw-contact-note strong{
+  font-size:12px;
+  color:#d5d9da;
+  font-weight:500;
+}
 .nw-contact-spacer{display:none!important}
 
-/* Mobile responsiveness pass */
+/* Large desktop */
+@media(min-width:1200px){
+  .site-header{
+    width:min(1140px,calc(100% - 48px));
+    height:74px;
+  }
+  .site-header .logo{font-size:20px}
+  .site-header .logo-mark{width:25px;height:25px}
+  .site-header .navigation{font-size:11.5px;gap:38px}
+  .site-header .navigation .book-button{font-size:11.5px}
+}
+
+/* Tablet */
 @media(max-width:900px){
+  .site-header{
+    width:calc(100% - 24px);
+    height:68px;
+    padding:0 18px 0 20px;
+    gap:20px;
+  }
+  .site-header .logo{
+    font-size:16px;
+    letter-spacing:.16em;
+  }
+  .site-header .logo-mark{width:22px;height:22px}
+  .site-header .navigation{
+    gap:18px;
+    font-size:10.5px;
+  }
+  .site-header .navigation .book-button{
+    padding:14px 18px;
+    font-size:10.5px;
+  }
   .nw-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nw-metrics article:nth-child(2){border-right:0}
   .nw-section-head{grid-template-columns:1fr;gap:20px}
@@ -1346,24 +1476,56 @@ footer{
   .nw-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
+/* Mobile */
 @media(max-width:640px){
   body{overflow-x:hidden}
+
   .site-header{
-    width:calc(100% - 20px);
-    top:10px;
-    margin-top:10px;
-    padding:0 14px 0 16px;
-    border-radius:18px
+    width:calc(100% - 18px);
+    height:64px;
+    top:9px;
+    margin-top:9px;
+    padding:0 15px 0 16px;
+    border-radius:18px;
   }
-  .logo{max-width:210px}
-  .logo span:last-child{font-size:10px;letter-spacing:.11em}
-  .navigation{top:66px;left:0;right:0;padding:18px;border-radius:16px}
+  .site-header .logo{
+    gap:9px;
+    max-width:none;
+    font-size:14px;
+    letter-spacing:.14em;
+    font-weight:650;
+  }
+  .site-header .logo span:last-child{
+    font-size:14px!important;
+    letter-spacing:.14em!important;
+  }
+  .site-header .logo-mark{width:21px;height:21px}
+  .site-header .menu-toggle{
+    font-size:25px;
+    line-height:1;
+    padding:6px;
+  }
+  .site-header .navigation{
+    top:71px;
+    padding:20px;
+    gap:18px;
+  }
+  .site-header .navigation a:not(.book-button){
+    font-size:13px;
+    letter-spacing:.16em;
+  }
+  .site-header .navigation .book-button{
+    font-size:12px;
+    padding:15px 18px;
+  }
+
   .section{
     padding-left:18px!important;
     padding-right:18px!important;
     padding-top:64px!important;
     padding-bottom:64px!important;
   }
+
   .hero{
     padding-top:58px!important;
     padding-bottom:44px!important;
@@ -1375,14 +1537,24 @@ footer{
     line-height:.94!important;
     max-width:100%;
   }
-  .hero-copy>p{font-size:14px;line-height:1.65}
+  .hero-copy>p{
+    font-size:14px;
+    line-height:1.65;
+  }
   .hero-services{gap:7px}
-  .hero-services span{font-size:10px;padding:8px 10px}
+  .hero-services span{
+    font-size:10px;
+    padding:8px 10px;
+  }
   .hero-proof{padding:22px!important}
-  .hero-proof>strong{font-size:clamp(2.2rem,12vw,3.4rem)!important}
-  .hero-proof-meta{gap:10px}
+  .hero-proof>strong{
+    font-size:clamp(2.2rem,12vw,3.4rem)!important;
+  }
   .hero-actions{gap:10px}
-  .hero-primary,.hero-secondary{min-height:50px;justify-content:center}
+  .hero-primary,.hero-secondary{
+    min-height:50px;
+    justify-content:center;
+  }
 
   .nw-metrics{
     grid-template-columns:1fr 1fr;
@@ -1390,256 +1562,563 @@ footer{
     padding-bottom:0!important;
     gap:0;
   }
-  .nw-metrics article{min-height:112px;padding:18px 12px;border-right:0}
-  .nw-metrics article:nth-child(odd){border-right:1px solid rgba(255,255,255,.08)}
+  .nw-metrics article{
+    min-height:112px;
+    padding:18px 12px;
+    border-right:0;
+  }
+  .nw-metrics article:nth-child(odd){
+    border-right:1px solid rgba(255,255,255,.08);
+  }
   .nw-metrics strong{font-size:1.45rem}
   .nw-metrics span{font-size:10px;line-height:1.45}
 
-  .nw-section-head{display:block;margin-bottom:28px}
-  .nw-section-head h2{font-size:clamp(2.25rem,11vw,3.25rem);line-height:1.02}
-  .nw-section-head>p{margin-top:18px;font-size:13px}
-  .nw-service-grid{grid-template-columns:1fr;gap:12px}
-  .nw-service-card{min-height:0;padding:22px;border-radius:18px}
+  .nw-section-head{
+    display:block;
+    margin-bottom:28px;
+  }
+  .nw-section-head h2{
+    font-size:clamp(2.25rem,11vw,3.25rem);
+    line-height:1.02;
+  }
+  .nw-section-head>p{
+    margin-top:18px;
+    font-size:13px;
+  }
+  .nw-service-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .nw-service-card{
+    min-height:0;
+    padding:22px;
+    border-radius:18px;
+  }
   .nw-service-number{margin-bottom:34px}
   .nw-service-card h3{font-size:1.65rem}
   .nw-service-card p{font-size:13px}
-  .featured-heading h2{font-size:clamp(2.25rem,11vw,3.2rem)}
-  .featured-card{padding:24px!important;border-radius:18px!important}
-  .nw-featured-meta{align-items:flex-start;flex-direction:column;gap:6px}
 
-  .works{padding-left:0!important;padding-right:0!important}
-  .works>.section-title,.works>.nw-swipe-note,.rail-heading{
-    margin-left:18px!important;margin-right:18px!important;
+  .featured-heading h2{
+    font-size:clamp(2.25rem,11vw,3.2rem);
   }
-  .nw-swipe-note{display:block;margin-bottom:8px!important}
-  .rail-heading{margin-top:34px!important;margin-bottom:16px!important;font-size:9px}
-  .carousel-block{margin-top:26px}
-  .carousel-block.short-block{margin-top:50px}
+  .featured-card{
+    padding:24px!important;
+    border-radius:18px!important;
+  }
+  .nw-featured-meta{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .works{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  .works>.section-title,
+  .works>.nw-swipe-note,
+  .rail-heading{
+    margin-left:18px!important;
+    margin-right:18px!important;
+  }
+  .nw-swipe-note{
+    display:block;
+    margin-bottom:8px!important;
+  }
+  .rail-heading{
+    margin-top:34px!important;
+    margin-bottom:16px!important;
+    font-size:9px;
+  }
+
+  /* Better phone carousel framing */
   .carousel{padding-bottom:4px}
   .carousel .slides{width:100%!important}
-  .landscape .slides{height:clamp(190px,58vw,255px)!important}
-  .landscape .slide{width:76%!important}
+  .landscape .slides{
+    height:clamp(190px,58vw,255px)!important;
+  }
+  .landscape .slide{
+    width:76%!important;
+  }
   .landscape .slide.is-before{left:-3%!important}
   .landscape .slide.is-after{left:103%!important}
-  .portrait-carousel .slides{height:clamp(360px,104vw,460px)!important}
-  .portrait-carousel .slide{width:58%!important}
+
+  .portrait-carousel .slides{
+    height:clamp(360px,104vw,460px)!important;
+  }
+  .portrait-carousel .slide{
+    width:58%!important;
+  }
   .portrait-carousel .slide.is-before{left:2%!important}
   .portrait-carousel .slide.is-after{left:98%!important}
+
   .carousel .arrow{
-    width:34px!important;height:34px!important;
+    width:34px!important;
+    height:34px!important;
     top:48%!important;
-    opacity:.82
+    opacity:.82;
   }
   .previous{left:7px!important}
   .next{right:7px!important}
-  .slide-caption{font-size:11px!important;line-height:1.45;padding:0 8px}
-  .dots{margin-top:8px;gap:6px}
+  .slide-caption{
+    font-size:11px!important;
+    line-height:1.45;
+    padding:0 8px;
+  }
+  .dots{
+    margin-top:8px;
+    gap:6px;
+  }
   .dots button{width:6px;height:6px}
   .dots button.active{width:24px}
   .screen{border-radius:14px!important}
-  .brand-window{margin-top:32px}
 
-  .nw-tool-grid{grid-template-columns:1fr;gap:10px}
+  .nw-tool-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
   .nw-tool-grid .nw-tool-wide{grid-column:auto}
-  .nw-tool-grid article{min-height:0;padding:22px}
+  .nw-tool-grid article{
+    min-height:0;
+    padding:22px;
+  }
   .nw-tool-grid h3{margin-top:26px}
 
   .about-with-loom{gap:34px!important}
   .about-intro-copy{gap:24px!important}
-  .about-photo{width:min(72vw,250px)!important;height:min(72vw,250px)!important;margin:0 auto}
+  .about-photo{
+    width:min(72vw,250px)!important;
+    height:min(72vw,250px)!important;
+    margin:0 auto;
+  }
   .about-copy{text-align:left}
-  .about-copy h2{font-size:clamp(2.35rem,11vw,3.2rem)}
+  .about-copy h2{
+    font-size:clamp(2.35rem,11vw,3.2rem);
+  }
   .about-copy p{font-size:14px}
-  .nw-about-actions{display:grid;grid-template-columns:1fr}
+  .nw-about-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
   .nw-about-actions a{text-align:center}
 
-  .contact h2{font-size:clamp(2.45rem,12vw,3.45rem)!important;line-height:1.02}
+  .contact h2{
+    font-size:clamp(2.45rem,12vw,3.45rem)!important;
+    line-height:1.02;
+  }
   .contact h2 br{display:none}
-  .contact>p{font-size:13px;margin-bottom:24px}
-  .nw-contact-note{display:block;text-align:left;margin-bottom:24px}
-  .nw-contact-note span{display:block;margin-bottom:7px}
-  .nw-contact-note strong{display:block;line-height:1.55}
+  .contact>p{
+    font-size:13px;
+    margin-bottom:24px;
+  }
+  .nw-contact-note{
+    display:block;
+    text-align:left;
+    margin-bottom:24px;
+  }
+  .nw-contact-note span{
+    display:block;
+    margin-bottom:7px;
+  }
+  .nw-contact-note strong{
+    display:block;
+    line-height:1.55;
+  }
   .contact-layout{margin-top:20px!important}
   .contact-card{padding:15px!important}
-  .contact-details strong{font-size:12px!important;overflow-wrap:anywhere}
-  footer{padding-left:18px!important;padding-right:18px!important;gap:12px!important}
+  .contact-details strong{
+    font-size:12px!important;
+    overflow-wrap:anywhere;
+  }
+
+  footer{
+    padding-left:18px!important;
+    padding-right:18px!important;
+    gap:12px!important;
+  }
 }
 
-/* Touch users: reduce hover-only assumptions */
+/* Small phones */
+@media(max-width:390px){
+  .site-header .logo{
+    font-size:12.5px;
+    letter-spacing:.12em;
+  }
+  .site-header .logo span:last-child{
+    font-size:12.5px!important;
+    letter-spacing:.12em!important;
+  }
+  .site-header .logo-mark{
+    width:20px;
+    height:20px;
+  }
+}
+
+/* Touch users */
 @media(hover:none) and (pointer:coarse){
   .nw-service-card:hover{transform:none}
-  .slide:hover .play{transform:translate(-50%,-50%)}
   .carousel .arrow{opacity:.72}
 }
 
 
 
 /* =========================================================
-   HEADER TYPE SCALE — closer to the Dancel Works reference
-   Larger wordmark + more readable nav on desktop and mobile.
-   PREVIEW ONLY.
+   MOBILE QA FIX — phone spacing, centering, and carousel UX
+   Preview only until approved.
    ========================================================= */
 
-.site-header{
-  width:min(1080px,calc(100% - 40px));
-  height:72px;
-  padding:0 24px 0 28px;
-  gap:34px;
-}
-
-/* NATHANIEL WORKS wordmark */
-.site-header .logo,
-footer .logo{
-  gap:11px;
-  font-size:19px;
-  line-height:1;
-  letter-spacing:.19em;
-  font-weight:600;
-}
-
-.site-header .logo-mark,
-footer .logo-mark{
-  width:24px;
-  height:24px;
-}
-
-/* Header navigation */
-.site-header .navigation{
-  gap:34px;
-  font-size:11px;
-  line-height:1;
-  letter-spacing:.22em;
-  font-weight:700;
-}
-
-.site-header .navigation .book-button{
-  font-size:11px;
-  padding:16px 25px;
-  letter-spacing:.08em;
-}
-
-/* Large desktop: keep the header proportion visually strong */
-@media(min-width:1200px){
-  .site-header{
-    width:min(1140px,calc(100% - 48px));
-    height:74px;
-  }
-
-  .site-header .logo{
-    font-size:20px;
-  }
-
-  .site-header .logo-mark{
-    width:25px;
-    height:25px;
-  }
-
+/* Treat small tablets / wide-reporting phones as mobile too. */
+@media (max-width:900px){
+  .menu-toggle{display:block!important}
   .site-header .navigation{
-    font-size:11.5px;
-    gap:38px;
+    display:none!important;
+    position:absolute!important;
+    top:72px!important;
+    left:0!important;
+    right:0!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:18px!important;
+    padding:20px!important;
+    border:1px solid rgba(255,255,255,.18)!important;
+    border-radius:18px!important;
+    background:rgba(24,26,30,.96)!important;
+    backdrop-filter:blur(18px)!important;
   }
-
-  .site-header .navigation .book-button{
-    font-size:11.5px;
-  }
+  .site-header .navigation.open{display:flex!important}
 }
 
-/* Tablet */
-@media(max-width:900px){
-  .site-header{
-    width:calc(100% - 24px);
-    height:68px;
-    padding:0 18px 0 20px;
-    gap:20px;
-  }
-
-  .site-header .logo{
-    font-size:16px;
-    letter-spacing:.16em;
-  }
-
-  .site-header .logo-mark{
-    width:22px;
-    height:22px;
-  }
-
-  .site-header .navigation{
-    gap:18px;
-    font-size:10.5px;
-  }
-
-  .site-header .navigation .book-button{
-    padding:14px 18px;
-    font-size:10.5px;
-  }
+/* JS-backed phone mode catches devices that report a desktop/tablet viewport. */
+html.phone-view body{
+  overflow-x:hidden!important;
 }
 
-/* Mobile */
-@media(max-width:640px){
-  .site-header{
-    width:calc(100% - 18px);
-    height:64px;
-    top:9px;
-    margin-top:9px;
-    padding:0 15px 0 16px;
-    border-radius:18px;
-  }
-
-  .site-header .logo{
-    gap:9px;
-    max-width:none;
-    font-size:14px;
-    letter-spacing:.14em;
-    font-weight:650;
-  }
-
-  .site-header .logo span:last-child{
-    font-size:14px !important;
-    letter-spacing:.14em !important;
-  }
-
-  .site-header .logo-mark{
-    width:21px;
-    height:21px;
-  }
-
-  .site-header .menu-toggle{
-    font-size:25px;
-    line-height:1;
-    padding:6px;
-  }
-
-  .site-header .navigation{
-    top:71px;
-    padding:20px;
-    gap:18px;
-  }
-
-  .site-header .navigation a:not(.book-button){
-    font-size:13px;
-    letter-spacing:.16em;
-  }
-
-  .site-header .navigation .book-button{
-    font-size:12px;
-    padding:15px 18px;
-  }
+html.phone-view .site-header{
+  width:calc(100% - 18px)!important;
+  max-width:none!important;
+  height:64px!important;
+  top:9px!important;
+  margin:9px auto 0!important;
+  padding:0 15px 0 16px!important;
+  border-radius:18px!important;
 }
 
-/* Very small phones: keep wordmark readable without wrapping */
-@media(max-width:390px){
-  .site-header .logo{
-    font-size:12.5px;
-    letter-spacing:.12em;
-  }
+html.phone-view .site-header .logo{
+  gap:9px!important;
+  font-size:14px!important;
+  letter-spacing:.14em!important;
+}
+html.phone-view .site-header .logo span:last-child{
+  font-size:14px!important;
+  letter-spacing:.14em!important;
+}
+html.phone-view .site-header .logo-mark{
+  width:21px!important;
+  height:21px!important;
+}
 
-  .site-header .logo span:last-child{
-    font-size:12.5px !important;
-    letter-spacing:.12em !important;
-  }
+html.phone-view .menu-toggle{
+  display:block!important;
+  font-size:25px!important;
+  padding:6px!important;
+}
+html.phone-view .navigation{
+  display:none!important;
+  position:absolute!important;
+  top:71px!important;
+  left:0!important;
+  right:0!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:18px!important;
+  padding:20px!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  border-radius:18px!important;
+  background:rgba(24,26,30,.97)!important;
+  backdrop-filter:blur(20px)!important;
+}
+html.phone-view .navigation.open{display:flex!important}
+html.phone-view .navigation a:not(.book-button){
+  font-size:13px!important;
+  letter-spacing:.16em!important;
+}
+html.phone-view .navigation .book-button{
+  font-size:12px!important;
+  padding:15px 18px!important;
+  text-align:center!important;
+}
 
-  .site-header .logo-mark{
-    width:20px;
-    height:20px;
-  }
+/* Remove huge vertical gaps on phones. */
+html.phone-view .section{
+  padding-top:50px!important;
+  padding-bottom:50px!important;
+  padding-left:18px!important;
+  padding-right:18px!important;
+  min-height:0!important;
+}
+html.phone-view .hero{
+  min-height:0!important;
+  display:block!important;
+  padding-top:54px!important;
+  padding-bottom:42px!important;
+}
+html.phone-view .hero-copy{
+  max-width:none!important;
+  width:100%!important;
+}
+html.phone-view .hero h1{
+  font-size:clamp(2.8rem,11vw,4.1rem)!important;
+  line-height:.95!important;
+  margin:16px 0 20px!important;
+}
+html.phone-view .hero-copy>p{
+  font-size:15px!important;
+  line-height:1.62!important;
+  margin-bottom:24px!important;
+}
+html.phone-view .hero-actions{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:10px!important;
+  margin-bottom:20px!important;
+}
+html.phone-view .hero-primary,
+html.phone-view .hero-secondary{
+  width:100%!important;
+  min-height:50px!important;
+  justify-content:center!important;
+}
+html.phone-view .hero-services{
+  gap:7px!important;
+}
+html.phone-view .hero-services span{
+  font-size:10px!important;
+  padding:8px 10px!important;
+}
+html.phone-view .hero-proof{
+  width:100%!important;
+  max-width:none!important;
+  margin:26px auto 0!important;
+  padding:22px!important;
+  border-radius:18px!important;
+}
+html.phone-view .hero-proof>strong{
+  font-size:clamp(2.3rem,10.5vw,3.4rem)!important;
+}
+
+/* Keep result/service/featured cards centered and full-width. */
+html.phone-view .nw-metrics{
+  grid-template-columns:1fr 1fr!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+html.phone-view .nw-metrics article{
+  min-height:108px!important;
+  padding:16px 12px!important;
+}
+html.phone-view .nw-service-grid,
+html.phone-view .featured-grid,
+html.phone-view .nw-tool-grid{
+  grid-template-columns:1fr!important;
+  width:100%!important;
+}
+html.phone-view .nw-service-card,
+html.phone-view .featured-card,
+html.phone-view .nw-tool-grid article{
+  width:100%!important;
+  max-width:none!important;
+  min-height:0!important;
+  margin-inline:auto!important;
+}
+html.phone-view .nw-tool-grid .nw-tool-wide{grid-column:auto!important}
+
+/* Consistent mobile headings and spacing. */
+html.phone-view .nw-section-head,
+html.phone-view .featured-heading,
+html.phone-view .section-title{
+  display:block!important;
+  width:100%!important;
+  margin-bottom:28px!important;
+}
+html.phone-view .nw-section-head h2,
+html.phone-view .featured-heading h2,
+html.phone-view .section-title h2{
+  font-size:clamp(2.25rem,9vw,3.2rem)!important;
+  line-height:1.02!important;
+}
+html.phone-view .nw-section-head>p,
+html.phone-view .featured-heading>p,
+html.phone-view .section-title>p{
+  max-width:none!important;
+  margin-top:16px!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* Portfolio library: remove extra side padding only where the carousel needs edge space. */
+html.phone-view .works{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+html.phone-view .works>.section-title,
+html.phone-view .works>.nw-swipe-note,
+html.phone-view .rail-heading{
+  margin-left:18px!important;
+  margin-right:18px!important;
+}
+html.phone-view .nw-swipe-note{
+  display:block!important;
+  margin-bottom:10px!important;
+}
+
+/* True centered mobile carousel geometry. */
+html.phone-view .carousel{
+  min-height:0!important;
+  width:100%!important;
+  padding:2px 0 6px!important;
+  touch-action:pan-y!important;
+  overscroll-behavior-x:contain!important;
+}
+html.phone-view .carousel .slides{
+  width:100%!important;
+  margin:0 auto!important;
+  overflow:hidden!important;
+  position:relative!important;
+  touch-action:pan-y!important;
+}
+
+html.phone-view .landscape .slides{
+  height:clamp(220px,62vw,300px)!important;
+}
+html.phone-view .landscape .slide{
+  width:min(78%,520px)!important;
+  left:50%!important;
+  top:50%!important;
+}
+html.phone-view .landscape .slide.show{
+  left:50%!important;
+  transform:translate(-50%,-50%) scale(1)!important;
+}
+html.phone-view .landscape .slide.is-before{
+  left:-8%!important;
+  transform:translate(-50%,-50%) scale(.72)!important;
+}
+html.phone-view .landscape .slide.is-after{
+  left:108%!important;
+  transform:translate(-50%,-50%) scale(.72)!important;
+}
+
+html.phone-view .portrait-carousel .slides{
+  height:clamp(410px,108vw,530px)!important;
+}
+html.phone-view .portrait-carousel .slide{
+  width:min(62%,330px)!important;
+  left:50%!important;
+  top:50%!important;
+}
+html.phone-view .portrait-carousel .slide.show{
+  left:50%!important;
+  transform:translate(-50%,-50%) scale(1)!important;
+}
+html.phone-view .portrait-carousel .slide.is-before{
+  left:2%!important;
+  transform:translate(-50%,-50%) scale(.72)!important;
+}
+html.phone-view .portrait-carousel .slide.is-after{
+  left:98%!important;
+  transform:translate(-50%,-50%) scale(.72)!important;
+}
+
+html.phone-view .slide-caption{
+  margin-top:12px!important;
+  padding:0 10px!important;
+  font-size:12px!important;
+  line-height:1.45!important;
+  white-space:normal!important;
+}
+html.phone-view .dots{
+  margin-top:8px!important;
+  gap:6px!important;
+}
+html.phone-view .dots button{
+  width:6px!important;
+  height:6px!important;
+}
+html.phone-view .dots button.active{width:24px!important}
+
+/* Keep buttons but move them to safe phone edges. */
+html.phone-view .carousel .arrow{
+  width:38px!important;
+  height:38px!important;
+  top:48%!important;
+  opacity:.82!important;
+  z-index:8!important;
+}
+html.phone-view .carousel .previous{left:8px!important}
+html.phone-view .carousel .next{right:8px!important}
+
+/* Reduce gaps between consecutive portfolio categories. */
+html.phone-view .short-block,
+html.phone-view .dtc-videos,
+html.phone-view .motion-videos,
+html.phone-view .ai-assisted-videos,
+html.phone-view .ugc-videos,
+html.phone-view .thumbnail-gallery{
+  margin-top:0!important;
+  padding-top:42px!important;
+  padding-bottom:42px!important;
+}
+html.phone-view .rail-heading{
+  margin-top:0!important;
+  margin-bottom:14px!important;
+  font-size:10px!important;
+  line-height:1.5!important;
+}
+
+/* About / testimonial / contact centering on phones. */
+html.phone-view .about-with-loom,
+html.phone-view .about-intro-copy{
+  grid-template-columns:1fr!important;
+  width:100%!important;
+}
+html.phone-view .about-photo{
+  margin:0 auto 22px!important;
+}
+html.phone-view .about-copy,
+html.phone-view .about-media,
+html.phone-view .testimonial-grid,
+html.phone-view .contact-layout{
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+html.phone-view .contact h2{
+  font-size:clamp(2.4rem,10vw,3.4rem)!important;
+  line-height:1.03!important;
+}
+html.phone-view .contact h2 br{display:none!important}
+
+/* Static ads remain horizontally swipeable on phones. */
+html.phone-view .static-ads-grid{
+  grid-template-columns:none!important;
+  grid-auto-flow:column!important;
+  grid-auto-columns:min(78vw,320px)!important;
+  gap:16px!important;
+  overflow-x:auto!important;
+  scroll-snap-type:x mandatory!important;
+  overscroll-behavior-x:contain!important;
+  padding-bottom:14px!important;
+}
+html.phone-view .static-ad-sample{
+  scroll-snap-align:center!important;
+  width:100%!important;
+}
+
+/* Touch feedback while swiping. */
+.carousel.is-swiping{
+  cursor:grabbing!important;
+}
+.carousel.is-swiping .slide.show{
+  transition:none!important;
 }
