@@ -2122,3 +2122,329 @@ html.phone-view .static-ad-sample{
 .carousel.is-swiping .slide.show{
   transition:none!important;
 }
+
+
+
+/* MOBILE SWIPE V3
+   Vertical page scrolling remains native; horizontal gestures belong to carousels. */
+.carousel,
+.carousel .slides,
+.carousel .slide,
+.carousel .screen,
+.carousel .thumbnail{
+  touch-action:pan-y pinch-zoom!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+  -webkit-user-drag:none!important;
+}
+
+.carousel .thumbnail{
+  pointer-events:none;
+}
+
+.carousel.is-swipe-tracking{
+  cursor:grab;
+}
+
+.carousel.is-swiping{
+  cursor:grabbing;
+}
+
+.carousel.is-swiping .slide.show{
+  transition:none!important;
+}
+
+/* Give the thumb a generous interaction area without changing visual layout. */
+@media(max-width:900px), (pointer:coarse){
+  .carousel{
+    position:relative;
+    isolation:isolate;
+  }
+
+  .carousel .slides{
+    min-height:inherit;
+  }
+
+  .carousel .slide.show{
+    pointer-events:auto!important;
+  }
+
+  .carousel .arrow{
+    z-index:12!important;
+  }
+}
+
+
+
+/* MOBILE QA V4 — CENTER PHONE SECTIONS
+   Keeps Swipe V3 and fixes section/card alignment on real mobile browsers. */
+
+html.phone-view,
+html.phone-view body{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+
+html.phone-view main,
+html.phone-view .section{
+  min-width:0!important;
+  max-width:100%!important;
+}
+
+/* -------------------------
+   Achievement / case study
+   ------------------------- */
+html.phone-view .achievement{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding-left:18px!important;
+  padding-right:18px!important;
+}
+
+html.phone-view .achievement-copy{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto 30px!important;
+}
+
+html.phone-view .achievement-media{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  justify-self:auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+}
+
+html.phone-view .achievement-tabs{
+  margin:0 auto 18px!important;
+  max-width:100%!important;
+}
+
+html.phone-view .achievement-media [role="tabpanel"]{
+  width:100%!important;
+  max-width:100%!important;
+}
+
+html.phone-view .achievement-post{
+  width:min(100%,320px)!important;
+  max-width:320px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  justify-self:center!important;
+}
+
+html.phone-view .achievement-facebook{
+  width:min(100%,267px)!important;
+  max-width:267px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+html.phone-view .achievement-embed{
+  width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+html.phone-view .achievement-facebook iframe{
+  display:block!important;
+  width:267px!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+}
+
+html.phone-view .achievement-link{
+  width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* -------------------------
+   Testimonials
+   ------------------------- */
+html.phone-view .testimonials{
+  width:100%!important;
+  max-width:100%!important;
+  text-align:center!important;
+}
+
+html.phone-view .testimonial-grid{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  width:min(100%,380px)!important;
+  max-width:380px!important;
+  gap:16px!important;
+  margin:30px auto 0!important;
+  align-items:start!important;
+}
+
+html.phone-view .testimonial-video{
+  width:min(100%,320px)!important;
+  max-width:320px!important;
+  margin:0 auto!important;
+}
+
+html.phone-view .testimonial-messages{
+  display:grid!important;
+  width:100%!important;
+  max-width:360px!important;
+  margin:0 auto!important;
+  gap:14px!important;
+}
+
+html.phone-view .testimonial-messages figure{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+}
+
+html.phone-view .testimonial-video video,
+html.phone-view .testimonial-messages img{
+  width:100%!important;
+  max-width:100%!important;
+}
+
+/* -------------------------
+   Tools & Workflow
+   ------------------------- */
+html.phone-view .nw-tools{
+  width:100%!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+
+html.phone-view .nw-tools .nw-section-head{
+  width:100%!important;
+  max-width:100%!important;
+}
+
+html.phone-view .nw-tool-grid{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  gap:12px!important;
+  overflow:visible!important;
+}
+
+html.phone-view .nw-tool-grid article,
+html.phone-view .nw-tool-grid .nw-tool-wide{
+  grid-column:auto!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  margin:0 auto!important;
+  overflow:hidden!important;
+}
+
+/* -------------------------
+   About / media tabs
+   ------------------------- */
+html.phone-view .about-with-loom{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  width:100%!important;
+  max-width:100%!important;
+}
+
+html.phone-view .about-intro-copy,
+html.phone-view .about-media{
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+html.phone-view .about-video-tabs{
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+html.phone-view .loom-introduction,
+html.phone-view .about-video,
+html.phone-view .instagram-portfolio{
+  width:min(100%,360px)!important;
+  max-width:360px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* -------------------------
+   Contact cards
+   ------------------------- */
+html.phone-view .contact-layout{
+  width:min(100%,520px)!important;
+  max-width:520px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+html.phone-view .contact-card,
+html.phone-view .email-contact{
+  width:100%!important;
+  max-width:100%!important;
+}
+
+/* -------------------------
+   Generic card centering
+   ------------------------- */
+html.phone-view .nw-service-grid,
+html.phone-view .featured-grid,
+html.phone-view .client-grid,
+html.phone-view .client-profile-grid{
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+html.phone-view .nw-service-card,
+html.phone-view .featured-card,
+html.phone-view .client-grid article,
+html.phone-view .client-profile{
+  max-width:100%!important;
+  min-width:0!important;
+}
+
+/* Avoid any nested horizontal scroller except the intentional Static Ads strip. */
+html.phone-view .achievement,
+html.phone-view .testimonials,
+html.phone-view .nw-tools,
+html.phone-view .about,
+html.phone-view .contact{
+  overflow-x:hidden!important;
+}
+
+/* Extra fallback for phones that land inside CSS mobile media queries
+   but before phone-view class is attached. */
+@media(max-width:640px){
+  .achievement-media{
+    justify-self:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  .testimonial-grid{
+    grid-template-columns:1fr!important;
+    width:min(100%,380px)!important;
+    max-width:380px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  .testimonial-video,
+  .testimonial-messages{
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  .nw-tool-grid{
+    width:100%!important;
+    max-width:100%!important;
+  }
+}

@@ -1,18 +1,18 @@
-NATHANIEL WORKS — MOBILE QA PREVIEW
+NATHANIEL WORKS — MOBILE QA V4
 
-Changes based on the uploaded mobile screen recording:
-- Reduced oversized vertical gaps on phone layouts
-- Forces phone layout on touch phones that report wider tablet/desktop viewport sizes
-- Hamburger navigation up to 900px and for detected phone devices
-- Hero no longer uses desktop-height spacing on phones
-- Cards/containers center correctly and use the available phone width
-- Portfolio carousel active card is centered
-- Side carousel previews remain partially visible
-- Previous / Next buttons retained
-- Left/right swipe added to every [data-carousel]
-- Static Ads keep native horizontal swipe
-- Portfolio section spacing tightened
-- About, testimonial, and contact containers centered on phones
-- Cache-busting query added to style.css and script.js
+Combined fixes:
+- Keeps Mobile Swipe V3:
+  swipe left = next
+  swipe right = previous
+  chevron buttons remain available
+- Centers Wise Cleaner achievement media on phone
+- Centers Facebook milestone embed
+- Converts Testimonials to one centered mobile column
+- Centers video testimonial and message cards
+- Forces Tools & Workflow to one full-width centered column
+- Centers About media/tabs
+- Centers Contact cards
+- Removes accidental horizontal overflow in these sections
+- Adds CSS/JS cache busting: mobileqav4
 
-PREVIEW ONLY — not pushed or published.
+PREVIEW ONLY — not published.

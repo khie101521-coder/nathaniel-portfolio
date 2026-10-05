@@ -57,12 +57,102 @@ document.querySelectorAll('[data-carousel]').forEach(carousel=>{
   }
   carousel.querySelector('.previous').addEventListener('click',()=>show(current-1));
   carousel.querySelector('.next').addEventListener('click',()=>show(current+1));
+
+  /* Reliable mobile thumb swipe:
+     left = next, right = previous.
+     Runs inside this carousel closure and calls show() directly. */
+  let swipeStartX=0;
+  let swipeStartY=0;
+  let swipeLastX=0;
+  let swipeLastY=0;
+  let swipeStartTime=0;
+  let swipeTracking=false;
+  let swipeHorizontal=false;
+  let suppressSlideClickUntil=0;
+
+  carousel.addEventListener('touchstart',event=>{
+    if(event.touches.length!==1)return;
+    const touch=event.touches[0];
+    swipeStartX=touch.clientX;
+    swipeStartY=touch.clientY;
+    swipeLastX=touch.clientX;
+    swipeLastY=touch.clientY;
+    swipeStartTime=Date.now();
+    swipeTracking=true;
+    swipeHorizontal=false;
+    carousel.classList.add('is-swipe-tracking');
+  },{passive:true});
+
+  carousel.addEventListener('touchmove',event=>{
+    if(!swipeTracking||event.touches.length!==1)return;
+
+    const touch=event.touches[0];
+    swipeLastX=touch.clientX;
+    swipeLastY=touch.clientY;
+
+    const dx=swipeLastX-swipeStartX;
+    const dy=swipeLastY-swipeStartY;
+
+    /* Once the gesture is clearly horizontal, keep it inside the carousel.
+       Vertical gestures are left alone so the page still scrolls normally. */
+    if(!swipeHorizontal && Math.abs(dx)>12 && Math.abs(dx)>Math.abs(dy)*1.15){
+      swipeHorizontal=true;
+      carousel.classList.add('is-swiping');
+    }
+
+    if(swipeHorizontal && event.cancelable){
+      event.preventDefault();
+    }
+  },{passive:false});
+
+  carousel.addEventListener('touchend',event=>{
+    if(!swipeTracking)return;
+
+    if(event.changedTouches.length){
+      swipeLastX=event.changedTouches[0].clientX;
+      swipeLastY=event.changedTouches[0].clientY;
+    }
+
+    const dx=swipeLastX-swipeStartX;
+    const dy=swipeLastY-swipeStartY;
+    const elapsed=Date.now()-swipeStartTime;
+
+    const isHorizontal=
+      Math.abs(dx)>=36 &&
+      Math.abs(dx)>Math.abs(dy)*1.12 &&
+      elapsed<=1200;
+
+    if(isHorizontal){
+      suppressSlideClickUntil=Date.now()+550;
+      show(current+(dx<0?1:-1));
+    }
+
+    swipeTracking=false;
+    swipeHorizontal=false;
+    carousel.classList.remove('is-swiping','is-swipe-tracking');
+  },{passive:true});
+
+  carousel.addEventListener('touchcancel',()=>{
+    swipeTracking=false;
+    swipeHorizontal=false;
+    carousel.classList.remove('is-swiping','is-swipe-tracking');
+  },{passive:true});
+
+  /* A completed swipe must not also open the active video/link. */
+  carousel.addEventListener('click',event=>{
+    if(Date.now()<suppressSlideClickUntil){
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  },true);
+
   carousel.addEventListener('keydown',event=>{
     if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
       event.preventDefault();
       show(current+(event.key==='ArrowRight'?1:-1));
     }
   });
+
   show(0);
 });
 
@@ -184,85 +274,4 @@ aboutVideoTabs.forEach((tab,index)=>{
   else if(event.key==='Home')next=0;else if(event.key==='End')next=aboutVideoTabs.length-1;else return;
   event.preventDefault();selectAboutVideoTab(aboutVideoTabs[next]);aboutVideoTabs[next].focus();
  });
-});
-
-
-/* Mobile swipe navigation for all portfolio carousels.
-   Uses Pointer Events where available, with touch fallback. */
-document.querySelectorAll('[data-carousel]').forEach(carousel=>{
-  let startX=0;
-  let startY=0;
-  let startTime=0;
-  let activePointer=null;
-  let suppressClickUntil=0;
-  let handledAt=0;
-
-  const performSwipe=(dx,dy,elapsed)=>{
-    if(Date.now()-handledAt<250)return;
-    if(Math.abs(dx)<42)return;
-    if(Math.abs(dx)<=Math.abs(dy)*1.15)return;
-    if(elapsed>1000)return;
-
-    const button=dx<0
-      ? carousel.querySelector('.next')
-      : carousel.querySelector('.previous');
-
-    if(button){
-      handledAt=Date.now();
-      suppressClickUntil=Date.now()+450;
-      button.click();
-    }
-  };
-
-  if('PointerEvent' in window){
-    carousel.addEventListener('pointerdown',event=>{
-      if(event.pointerType!=='touch' && event.pointerType!=='pen')return;
-      activePointer=event.pointerId;
-      startX=event.clientX;
-      startY=event.clientY;
-      startTime=Date.now();
-      carousel.classList.add('is-swiping');
-    },{passive:true});
-
-    carousel.addEventListener('pointerup',event=>{
-      if(event.pointerId!==activePointer)return;
-      performSwipe(
-        event.clientX-startX,
-        event.clientY-startY,
-        Date.now()-startTime
-      );
-      activePointer=null;
-      carousel.classList.remove('is-swiping');
-    },{passive:true});
-
-    carousel.addEventListener('pointercancel',()=>{
-      activePointer=null;
-      carousel.classList.remove('is-swiping');
-    },{passive:true});
-  }else{
-    carousel.addEventListener('touchstart',event=>{
-      if(event.touches.length!==1)return;
-      startX=event.touches[0].clientX;
-      startY=event.touches[0].clientY;
-      startTime=Date.now();
-      carousel.classList.add('is-swiping');
-    },{passive:true});
-
-    carousel.addEventListener('touchend',event=>{
-      if(!event.changedTouches.length)return;
-      performSwipe(
-        event.changedTouches[0].clientX-startX,
-        event.changedTouches[0].clientY-startY,
-        Date.now()-startTime
-      );
-      carousel.classList.remove('is-swiping');
-    },{passive:true});
-  }
-
-  carousel.addEventListener('click',event=>{
-    if(Date.now()<suppressClickUntil){
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  },true);
 });
