@@ -1,13 +1,22 @@
-NATHANIEL WORKS — PORTFOLIO POLISH PREVIEW
+NATHANIEL WORKS — LEAN CLEAN FINAL
 
-Added:
-- Informative project names
-- Role · Platform · Objective metadata under carousel projects
-- Portfolio filter bar:
-  All / Short-form / DTC / UGC / Motion / Long-form / Static Ads / Thumbnails
-- Improved testimonial presentation with readable feedback + original screenshot proof
-- Availability/status pill near the hero
-- Custom-domain-ready notes (live domain not changed yet)
-- Existing mobile swipe and centering improvements retained
+Replace these root files in your GitHub repository:
+- index.html
+- style.css
+- script.js
 
-PREVIEW ONLY — NOT PUBLISHED.
+Keep the existing assets/ folder unchanged.
+
+Approved changes:
+- Removed repetitive hero proof and specialty chips
+- Shortened hero, Services, Selected Work, About, and Contact copy
+- Curated Selected Work remains
+- Full Portfolio Library remains collapsed by default
+- Wise Cleaner Case Study remains
+- Clients & Collaborators remains combined
+- Testimonials remain compact
+- Tools remain integrated into About
+- Mobile swipe and centering fixes retained
+
+Suggested GitHub Desktop Summary:
+Streamline portfolio and remove repetitive content

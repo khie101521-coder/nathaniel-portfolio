@@ -315,3 +315,26 @@ aboutVideoTabs.forEach((tab,index)=>{
 
   applyPortfolioFilter('all');
 })();
+
+
+
+/* Lean selected-work filters */
+(()=>{
+  const buttons=[...document.querySelectorAll('[data-lean-filter]')];
+  const cards=[...document.querySelectorAll('[data-lean-category]')];
+  if(!buttons.length||!cards.length)return;
+
+  const apply=filter=>{
+    buttons.forEach(btn=>{
+      const active=btn.dataset.leanFilter===filter;
+      btn.classList.toggle('active',active);
+      btn.setAttribute('aria-pressed',String(active));
+    });
+    cards.forEach(card=>{
+      card.hidden=!(filter==='all'||card.dataset.leanCategory===filter);
+    });
+  };
+
+  buttons.forEach(btn=>btn.addEventListener('click',()=>apply(btn.dataset.leanFilter)));
+  apply('all');
+})();
