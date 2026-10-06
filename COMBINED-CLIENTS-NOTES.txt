@@ -1,0 +1,12 @@
+NATHANIEL WORKS — CLIENTS & COLLABORATORS COMBINED PREVIEW
+
+Changed:
+- Combined the brand/client cards and People I’ve Worked With into one unified section.
+- One heading: Clients & Collaborators
+- One shared outer visual panel
+- Subgroup 1: Brands & Teams
+- Subgroup 2: People I’ve Worked With
+- Same brand/person data preserved
+- Mobile layout remains stacked and centered
+
+PREVIEW ONLY — not published.

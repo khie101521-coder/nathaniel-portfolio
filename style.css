@@ -2738,3 +2738,195 @@ html.phone-view .contact{
     object-position:top;
   }
 }
+
+
+
+/* =========================================================
+   CLIENTS & COLLABORATORS — UNIFIED SECTION
+   One section, two grouped content areas, one visual system.
+   ========================================================= */
+
+.clients-unified{
+  padding-top:90px;
+  padding-bottom:110px;
+}
+
+.clients-unified-heading{
+  max-width:980px;
+  margin:0 auto 42px;
+}
+
+.clients-unified-heading h2{
+  font-size:clamp(2.8rem,4.2vw,4.7rem);
+  line-height:1;
+  margin:0 0 14px;
+}
+
+.clients-unified-heading>p{
+  max-width:680px;
+  margin:0;
+  color:#aeb5b9;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.clients-unified-panel{
+  max-width:1240px;
+  margin:0 auto;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:26px;
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  backdrop-filter:blur(8px);
+}
+
+.clients-unified-group{
+  min-width:0;
+}
+
+.clients-group-label{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:22px;
+}
+
+.clients-group-label>span{
+  color:#f1f3f2;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+
+.clients-group-label>p{
+  max-width:430px;
+  margin:0;
+  color:#8f979b;
+  font-size:12px;
+  line-height:1.55;
+  text-align:right;
+}
+
+.clients-unified-divider{
+  height:1px;
+  margin:34px 0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
+}
+
+/* Brand cards fit one unified system */
+.clients-unified .client-grid{
+  margin:0;
+}
+
+.clients-unified .client-grid article{
+  background:rgba(255,255,255,.025);
+  border-color:rgba(255,255,255,.11);
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.clients-unified .client-grid h3{
+  margin-top:4px;
+}
+
+/* People cards use the same visual language as brand cards */
+.clients-unified .client-profile-grid{
+  margin:0;
+}
+
+.clients-unified .client-profile{
+  background:rgba(255,255,255,.025);
+  border-color:rgba(255,255,255,.11);
+}
+
+.clients-unified .client-profile:hover,
+.clients-unified .client-grid article:hover{
+  border-color:rgba(25,250,21,.28);
+  background:rgba(255,255,255,.04);
+}
+
+/* Remove the old extra vertical separation because this is now one panel */
+.clients-unified .client-people{
+  margin-top:0;
+}
+
+@media(max-width:900px){
+  .clients-unified-panel{
+    padding:22px;
+    border-radius:22px;
+  }
+
+  .clients-group-label{
+    align-items:start;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .clients-group-label>p{
+    text-align:left;
+  }
+}
+
+@media(max-width:640px){
+  .clients-unified{
+    padding-top:58px!important;
+    padding-bottom:58px!important;
+  }
+
+  .clients-unified-heading{
+    margin-bottom:26px;
+  }
+
+  .clients-unified-heading h2{
+    font-size:clamp(2.35rem,10vw,3.2rem);
+  }
+
+  .clients-unified-heading>p{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  .clients-unified-panel{
+    padding:14px;
+    border-radius:18px;
+  }
+
+  .clients-group-label{
+    margin:4px 4px 16px;
+  }
+
+  .clients-group-label>span{
+    font-size:10px;
+  }
+
+  .clients-group-label>p{
+    font-size:11px;
+  }
+
+  .clients-unified-divider{
+    margin:24px 0;
+  }
+
+  .clients-unified .client-grid{
+    gap:12px;
+  }
+
+  .clients-unified .client-grid article{
+    min-height:0;
+    padding:20px 16px;
+  }
+
+  .clients-unified .client-profile-grid{
+    gap:12px;
+  }
+
+  .clients-unified .client-profile{
+    width:100%;
+    max-width:100%;
+  }
+}
