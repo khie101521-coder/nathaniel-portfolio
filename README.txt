@@ -1,18 +1,9 @@
-NATHANIEL WORKS — MOBILE QA V4
+Replace only style.css in your repository.
 
-Combined fixes:
-- Keeps Mobile Swipe V3:
-  swipe left = next
-  swipe right = previous
-  chevron buttons remain available
-- Centers Wise Cleaner achievement media on phone
-- Centers Facebook milestone embed
-- Converts Testimonials to one centered mobile column
-- Centers video testimonial and message cards
-- Forces Tools & Workflow to one full-width centered column
-- Centers About media/tabs
-- Centers Contact cards
-- Removes accidental horizontal overflow in these sections
-- Adds CSS/JS cache busting: mobileqav4
+Changes included:
+- Whole portfolio background changed from near-black to dark gray
+- 3 ambient glows keep the same colors but move around 5% more
+- Major cards/containers made slightly rounder (around 5%)
 
-PREVIEW ONLY — not published.
+Suggested GitHub Desktop summary:
+Update portfolio background to gray and refine ambient glow
