@@ -1,29 +1,30 @@
-NATHANIEL — E-COMMERCE PAID ADS CONTAINER FIX
+NATHANIEL WORKS — APPROVED SERVICES + FEATURED WORK UPDATE
 
-Prepared for https://nathaniel-creative-portfolio.onrender.com/
-Based on latest GitHub commit 92347d39ea958ddd5cba6748f21c55b480d264f5.
+APPROVED BY USER: 6 October 2026
+Target: https://nathaniel-creative-portfolio.onrender.com/
+GitHub: khie101521-coder/nathaniel-portfolio, main branch
+Based on commit e99563f3c7824f578de20e47a412c96a87eb4048.
 
 CHANGES
-- Restores OPEN PROJECT to its original size before the last button reduction.
-- Reduces the large right-side preview card to a maximum width of 640px.
-- Card shrinks to fit smaller screens and remains centered in its column.
-- Keeps the existing image aspect ratio and the VIEW THE COLLECTION button.
-- Updates the stylesheet version so visitors load the corrected CSS.
+Combines What I Do and Featured Work into one section.
+Four service cards link to related sample projects.
+Four columns on wide desktop, two on smaller desktop/tablet, one on phones.
+Retains the Wise Cleaner 275K to 300K case study in a compact row.
+Keeps existing project links and the published 640px E-commerce preview fix.
 
 INSTALL
-1. Extract this ZIP.
-2. Replace index.html and style.css in the ROOT of your GitHub repository.
-3. Keep script.js and the entire assets folder as they are.
-4. Commit and push to main.
+Replace only index.html and style.css in your repository root.
+Keep script.js and assets/ unchanged.
+Commit and push to main.
 
 COMMIT SUMMARY
-Restore Open Project button and reduce E-commerce preview container
+Combine What I Do and Featured Work into one section
 
 VALIDATION
-Original button styling compared with the previous GitHub commit.
-Verified only the preview-card/button CSS and the HTML stylesheet version changed.
-Git diff whitespace check passed.
-Browser rendering could not be verified in this session.
+Verified four service cards, valid target anchors, no duplicate IDs,
+unchanged gallery/media sections and script.js, and preserved E-commerce sizing.
+Git whitespace check passed.
+This package matches the approved interactive preview.
 
 STATUS
-Prepared update only. Not pushed or published.
+Ready to publish. This package has not yet been pushed or deployed.
