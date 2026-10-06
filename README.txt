@@ -1,18 +1,13 @@
-NATHANIEL WORKS — MOBILE QA V4
+NATHANIEL WORKS — PORTFOLIO POLISH PREVIEW
 
-Combined fixes:
-- Keeps Mobile Swipe V3:
-  swipe left = next
-  swipe right = previous
-  chevron buttons remain available
-- Centers Wise Cleaner achievement media on phone
-- Centers Facebook milestone embed
-- Converts Testimonials to one centered mobile column
-- Centers video testimonial and message cards
-- Forces Tools & Workflow to one full-width centered column
-- Centers About media/tabs
-- Centers Contact cards
-- Removes accidental horizontal overflow in these sections
-- Adds CSS/JS cache busting: mobileqav4
+Added:
+- Informative project names
+- Role · Platform · Objective metadata under carousel projects
+- Portfolio filter bar:
+  All / Short-form / DTC / UGC / Motion / Long-form / Static Ads / Thumbnails
+- Improved testimonial presentation with readable feedback + original screenshot proof
+- Availability/status pill near the hero
+- Custom-domain-ready notes (live domain not changed yet)
+- Existing mobile swipe and centering improvements retained
 
-PREVIEW ONLY — not published.
+PREVIEW ONLY — NOT PUBLISHED.

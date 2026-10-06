@@ -275,3 +275,43 @@ aboutVideoTabs.forEach((tab,index)=>{
   event.preventDefault();selectAboutVideoTab(aboutVideoTabs[next]);aboutVideoTabs[next].focus();
  });
 });
+
+
+/* Portfolio format filters */
+(()=>{
+  const buttons=[...document.querySelectorAll('.portfolio-filter')];
+  const worksShell=document.querySelector('[data-filter-shell="works"]');
+  const worksBlocks=worksShell?[...worksShell.querySelectorAll('[data-work-category]')]:[];
+  const sectionTargets=[...document.querySelectorAll('[data-portfolio-category]')];
+
+  if(!buttons.length)return;
+
+  const applyPortfolioFilter=filter=>{
+    buttons.forEach(button=>{
+      const active=button.dataset.filter===filter;
+      button.classList.toggle('active',active);
+      button.setAttribute('aria-pressed',String(active));
+    });
+
+    worksBlocks.forEach(block=>{
+      const show=filter==='all'||block.dataset.workCategory===filter;
+      block.hidden=!show;
+    });
+
+    if(worksShell){
+      const showWorks=filter==='all'||worksBlocks.some(block=>block.dataset.workCategory===filter);
+      worksShell.hidden=!showWorks;
+    }
+
+    sectionTargets.forEach(section=>{
+      const categories=(section.dataset.portfolioCategory||'').split(/\s+/).filter(Boolean);
+      section.hidden=!(filter==='all'||categories.includes(filter));
+    });
+  };
+
+  buttons.forEach(button=>{
+    button.addEventListener('click',()=>applyPortfolioFilter(button.dataset.filter));
+  });
+
+  applyPortfolioFilter('all');
+})();
