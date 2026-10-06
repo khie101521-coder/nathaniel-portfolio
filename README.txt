@@ -1,22 +1,18 @@
-NATHANIEL WORKS — LEAN CLEAN FINAL
+NATHANIEL WORKS — MOBILE QA V4
 
-Replace these root files in your GitHub repository:
-- index.html
-- style.css
-- script.js
+Combined fixes:
+- Keeps Mobile Swipe V3:
+  swipe left = next
+  swipe right = previous
+  chevron buttons remain available
+- Centers Wise Cleaner achievement media on phone
+- Centers Facebook milestone embed
+- Converts Testimonials to one centered mobile column
+- Centers video testimonial and message cards
+- Forces Tools & Workflow to one full-width centered column
+- Centers About media/tabs
+- Centers Contact cards
+- Removes accidental horizontal overflow in these sections
+- Adds CSS/JS cache busting: mobileqav4
 
-Keep the existing assets/ folder unchanged.
-
-Approved changes:
-- Removed repetitive hero proof and specialty chips
-- Shortened hero, Services, Selected Work, About, and Contact copy
-- Curated Selected Work remains
-- Full Portfolio Library remains collapsed by default
-- Wise Cleaner Case Study remains
-- Clients & Collaborators remains combined
-- Testimonials remain compact
-- Tools remain integrated into About
-- Mobile swipe and centering fixes retained
-
-Suggested GitHub Desktop Summary:
-Streamline portfolio and remove repetitive content
+PREVIEW ONLY — not published.
