@@ -1,30 +1,24 @@
-NATHANIEL WORKS — APPROVED SERVICES + FEATURED WORK UPDATE
+APPROVED TESTIMONIAL SIZE FIX
 
-APPROVED BY USER: 6 October 2026
-Target: https://nathaniel-creative-portfolio.onrender.com/
-GitHub: khie101521-coder/nathaniel-portfolio, main branch
-Based on commit e99563f3c7824f578de20e47a412c96a87eb4048.
+1. Extract this ZIP.
+2. Copy index.html and style.css into your nathaniel-portfolio folder.
+3. Replace the existing files with the same names.
+4. In GitHub Desktop, commit to main and click Push origin.
 
-CHANGES
-Combines What I Do and Featured Work into one section.
-Four service cards link to related sample projects.
-Four columns on wide desktop, two on smaller desktop/tablet, one on phones.
-Retains the Wise Cleaner 275K to 300K case study in a compact row.
-Keeps existing project links and the published 640px E-commerce preview fix.
+Commit summary:
+Reduce client feedback cards and fix testimonial spacing
 
-INSTALL
-Replace only index.html and style.css in your repository root.
-Keep script.js and assets/ unchanged.
-Commit and push to main.
+Only index.html and style.css need to be replaced.
+No changes to script.js or the assets folder.
+This includes your published merged What I Do & Featured Work section.
 
-COMMIT SUMMARY
-Combine What I Do and Featured Work into one section
+Changes:
+- Desktop client feedback limited to 380px beside the existing 360px video.
+- Phone client feedback limited to 320px.
+- Clear spacing and centered layout, including landscape phones.
+- Original image proportions preserved.
+- Image dimensions reserve space while loading.
+- Stylesheet version updated to load the new CSS.
 
-VALIDATION
-Verified four service cards, valid target anchors, no duplicate IDs,
-unchanged gallery/media sections and script.js, and preserved E-commerce sizing.
-Git whitespace check passed.
-This package matches the approved interactive preview.
-
-STATUS
-Ready to publish. This package has not yet been pushed or deployed.
+Render site:
+https://nathaniel-creative-portfolio.onrender.com/
