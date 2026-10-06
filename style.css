@@ -2965,11 +2965,11 @@ body#top footer .logo-mark {
   }
   html:not(.phone-view) body#top .carousel .previous { left:12px; }
   html:not(.phone-view) body#top .carousel .next { right:12px; }
-  /* A wider centered testimonial group, not full-width stretched video. */
+  /* Compact centered testimonials: retain the video, bound the feedback cards. */
   html:not(.phone-view) body#top .testimonial-grid {
-    width:min(100%, 1040px);
-    max-width:1040px;
-    grid-template-columns:minmax(0, 360px) minmax(0, 1fr);
+    width:min(100%, 804px);
+    max-width:804px;
+    grid-template-columns:minmax(0, 360px) minmax(0, 420px);
     gap:24px;
     margin-inline:auto;
   }
@@ -2980,7 +2980,7 @@ body#top footer .logo-mark {
   }
   html:not(.phone-view) body#top .testimonial-messages {
     width:100%;
-    max-width:none;
+    max-width:420px;
   }
 }
 
