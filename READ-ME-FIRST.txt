@@ -1,0 +1,31 @@
+NATHANIEL WORKS — FONT SIZE PREVIEW / ORIGINAL LOGO PRESERVED
+
+This supersedes Nathaniel-Font-Size-Update-PREVIEW.zip.
+Based on that exact font-size package, not an older website version.
+
+PRODUCTION LOGO
+- The existing assets/nathaniel-works-logo.png image reference is unchanged.
+- No replacement logo, modified logo artwork, or font files are included.
+- The logo image dimensions and existing blending behavior are unchanged.
+- Only transparent-surface guards were added to the header/footer logo CSS.
+- All other font-size, gray background, glow, mobile centering and spacing
+  settings are unchanged from the preceding font-size preview.
+- The existing script.js and assets/ must be kept, not replaced.
+
+PREVIEW
+The supplied header screenshot is the visual logo reference. The standalone
+preview embeds a small crop of that same mark for review because the live logo
+was not retrievable here. Only the screenshot background around the mark is
+masked for the preview; the production logo file is not touched or replaced.
+Other live media and original web fonts require internet access. Local PNG
+renders use browser fallback fonts where the web fonts cannot load.
+
+AFTER APPROVAL
+Replace index.html and style.css in the repository root.
+Keep script.js and the entire assets/ folder unchanged.
+Do not upload the standalone preview HTML as your production index.
+
+GitHub Summary:
+Update font sizes and preserve original logo
+
+NOT PUSHED OR PUBLISHED.
