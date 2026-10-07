@@ -3138,3 +3138,380 @@ body#top footer .logo-mark {
 @media(min-width:1200px) {
   .nw-services-work .nw-service-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
 }
+
+
+/* CENTERED CASE STUDY + E-COMMERCE PAIRINGS — 2026-10-07
+   Scope: only the two selected sections. Keep full-width backgrounds, existing
+   type, original buttons, image proportions, and approved testimonial sizing.
+   Center the actual content tracks instead of stretching them to the edges. */
+body#top main > #paid-ads.section {
+  grid-template-columns: minmax(0, 430px) minmax(0, 640px);
+  column-gap: clamp(32px, 4vw, 64px);
+  justify-content: center;
+}
+body#top main > #paid-ads.section > .paid-copy {
+  width: 100%;
+  max-width: 430px;
+  min-width: 0;
+  justify-self: center;
+}
+/* Keep the already-approved single-column phone layout. */
+@media (max-width: 640px) {
+  body#top main > #paid-ads.section {
+    grid-template-columns: minmax(0, 640px);
+    row-gap: 35px;
+  }
+}
+
+@media (min-width: 1001px) {
+  html:not(.phone-view) body#top main > #achievements.section {
+    --nw-case-media-width: 504px;
+    grid-template-columns: minmax(0, 640px) var(--nw-case-media-width);
+    column-gap: clamp(36px, 4vw, 64px);
+    justify-content: center;
+  }
+  /* The Facebook post is narrower than LinkedIn. Size the track to the
+     visible post, so a hidden tab does not leave an empty half-column. */
+  @supports selector(:has(*)) {
+    html:not(.phone-view) body#top main > #achievements.section:has(#achievement-facebook-panel:not([hidden])) {
+      --nw-case-media-width: 267px;
+    }
+  }
+}
+/* Center both blocks when the existing case-study breakpoint stacks them. */
+@media (max-width: 1000px) {
+  html:not(.phone-view) body#top main > #achievements.section {
+    grid-template-columns: minmax(0, 720px);
+    justify-content: center;
+  }
+  html:not(.phone-view) body#top main > #achievements.section > .achievement-media {
+    justify-self: center;
+  }
+}
+
+
+/* CLIENTS + THEIR ASSOCIATED BRANDS — 2026-10-07
+   Six person-first cards replace the separate brand and people grids.
+   All rules are scoped to #clients; earlier centering, previews and testimonial
+   fixes remain unchanged. Production portraits, logos and scripts are reused. */
+body#top #clients .nw-clients-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  min-width: 0;
+}
+body#top #clients .nw-clients-heading {
+  margin: 0 0 32px;
+  text-align: left;
+}
+body#top #clients .nw-clients-heading h2 { margin-bottom: 14px; }
+body#top #clients .nw-clients-heading .section-intro {
+  margin: 0;
+  max-width: 720px;
+}
+body#top #clients .nw-client-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  min-width: 0;
+  align-items: stretch;
+}
+body#top #clients .nw-client-card {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+  margin: 0;
+  padding: 26px;
+  border: 1px solid #ffffff1d;
+  border-radius: 18.9px;
+  background: #ffffff07;
+  text-align: left;
+}
+body#top #clients .nw-client-person { min-width: 0; }
+body#top #clients .nw-client-identity {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+body#top #clients .nw-client-avatar {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #232529;
+}
+body#top #clients .nw-client-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+body#top #clients .nw-client-name-role { min-width: 0; }
+body#top #clients .nw-client-name-role h3 {
+  margin: 0 0 7px;
+  overflow-wrap: break-word;
+}
+body#top #clients p.nw-client-role,
+body#top #clients p.nw-client-bio,
+body#top #clients p.nw-client-work {
+  font-size: var(--type-support, .875rem) !important;
+  line-height: 1.6 !important;
+  overflow-wrap: break-word;
+}
+body#top #clients p.nw-client-role {
+  color: #edf0ed;
+  font-weight: 600;
+  margin: 0;
+}
+body#top #clients p.nw-client-bio {
+  color: #adb2b5;
+  margin: 16px 0 0;
+}
+body#top #clients .nw-client-associations {
+  min-width: 0;
+  margin-top: auto;
+  border-top: 1px solid #ffffff1d;
+  padding-top: 20px;
+}
+body#top #clients .nw-client-brands {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+}
+body#top #clients .nw-client-brand {
+  flex: 0 1 calc((100% - 24px) / 2);
+  max-width: 136px;
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+body#top #clients .nw-client-brand-art {
+  width: 112px;
+  max-width: 100%;
+  height: 56px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body#top #clients .nw-client-brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+}
+body#top #clients .nw-client-brand-logo--wide {
+  mix-blend-mode: lighten;
+  overflow: hidden;
+}
+body#top #clients .nw-client-brand figcaption {
+  color: #edf0ed;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-top: 8px;
+  overflow-wrap: break-word;
+}
+body#top #clients p.nw-client-work {
+  margin: 16px 0 0;
+  color: #adb2b5;
+  text-align: center;
+}
+@media (max-width: 1100px) {
+  body#top #clients .nw-client-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  body#top #clients .nw-clients-inner { max-width: 520px; }
+  body#top #clients .nw-clients-heading { margin-bottom: 26px; }
+  body#top #clients .nw-client-card-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  body#top #clients .nw-client-card { padding: 22px; gap: 20px; }
+  body#top #clients .nw-client-identity {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+  }
+  body#top #clients .nw-client-avatar { width: 64px; height: 64px; }
+  body#top #clients .nw-client-brand { flex-basis: calc((100% - 18px) / 2); }
+  body#top #clients .nw-client-brands { gap: 18px; }
+}
+@media (max-width: 360px) {
+  body#top #clients .nw-client-card { padding: 18px; }
+  body#top #clients .nw-client-identity {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+  }
+  body#top #clients .nw-client-avatar { width: 56px; height: 56px; }
+}
+
+
+/* THUMBNAIL FORMAT TABS + SOURCE-QUALITY PRESENTATION — 2026-10-07
+   Additive revision on top of centered sections and combined client cards.
+   No source images are resampled, recolored, AI-redrawn, or replaced here. */
+body#top #thumbnails .nw-thumbnail-tabs {
+  display:flex; width:fit-content; max-width:100%; gap:5px;
+  margin:0 auto 14px; padding:5px; border:1px solid #ffffff26;
+  border-radius:105px; background:#ffffff06;
+}
+body#top #thumbnails .nw-thumbnail-tabs button {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:11px 24px; border:0; border-radius:105px;
+  background:transparent; color:#c4c9c6; cursor:pointer;
+  font-family:inherit; font-size:var(--type-button,.875rem); font-weight:600;
+  line-height:1.5; letter-spacing:normal; white-space:nowrap;
+}
+body#top #thumbnails .nw-thumbnail-tabs button[aria-selected="true"] {
+  background:var(--lime); color:#101510;
+}
+body#top #thumbnails .nw-thumbnail-tabs button:hover { color:var(--white); }
+body#top #thumbnails .nw-thumbnail-tabs button[aria-selected="true"]:hover { color:#101510; }
+body#top #thumbnails .nw-thumbnail-panel[hidden] { display:none!important; }
+body#top #thumbnails .nw-thumb-format,
+body#top #thumbnails .nw-thumb-hint {
+  color:var(--muted,#bfc3c5); text-align:center;
+  font-size:var(--type-support,.875rem); line-height:1.5;
+  margin:0 auto 16px; max-width:100%;
+}
+body#top #thumbnails .nw-thumb-format span { margin-inline:8px; color:#797f83; }
+body#top #thumbnails .nw-thumb-hint { margin:8px auto 0; }
+body#top #thumbnails .nw-thumb-carousel {
+  --nw-thumb-active:280px; --nw-thumb-side:196px; --nw-thumb-offset:260px;
+  --nw-thumb-stage-height:558px; --nw-thumb-ratio:9/16;
+  position:relative; width:100%; max-width:1000px; min-width:0;
+  margin-inline:auto; touch-action:pan-y pinch-zoom;
+}
+body#top #thumbnails .nw-thumb-carousel.nw-thumb-long {
+  --nw-thumb-active:520px; --nw-thumb-side:260px; --nw-thumb-offset:414px;
+  --nw-thumb-stage-height:353px; --nw-thumb-ratio:16/9;
+  max-width:1240px;
+}
+body#top #thumbnails .nw-thumb-stage {
+  width:100%; height:var(--nw-thumb-stage-height); position:relative;
+  overflow:hidden; background:transparent; isolation:isolate;
+}
+body#top #thumbnails .nw-thumb-slide {
+  display:block; position:absolute; inset:auto; top:calc(50% - 25px);
+  left:50%; width:var(--nw-thumb-side); margin:0;
+  transform:translate(-50%,-50%); text-align:center; visibility:hidden;
+  opacity:0; pointer-events:none; z-index:0;
+  /* No transform scale or dimming: actual layout widths keep images clear. */
+  transition:left .25s ease, opacity .18s ease;
+}
+body#top #thumbnails .nw-thumb-slide.is-current {
+  width:var(--nw-thumb-active); opacity:1; visibility:visible;
+  pointer-events:auto; z-index:2;
+}
+body#top #thumbnails .nw-thumb-slide.is-before,
+body#top #thumbnails .nw-thumb-slide.is-after {
+  opacity:1; visibility:visible; pointer-events:auto; z-index:1;
+}
+body#top #thumbnails .nw-thumb-slide.is-before { left:calc(50% - var(--nw-thumb-offset)); }
+body#top #thumbnails .nw-thumb-slide.is-after { left:calc(50% + var(--nw-thumb-offset)); }
+body#top #thumbnails .nw-thumb-frame {
+  position:relative; width:100%; aspect-ratio:var(--nw-thumb-ratio);
+  border-radius:18px; overflow:hidden; background:transparent;
+  border:1px solid #ffffff12;
+}
+body#top #thumbnails .nw-thumb-frame img {
+  position:absolute; inset:0; width:100%; height:100%; display:block;
+  object-fit:contain; object-position:center; image-rendering:auto;
+  filter:none!important; opacity:1!important; box-shadow:none;
+  user-select:none; -webkit-user-drag:none; pointer-events:none;
+}
+body#top #thumbnails .nw-thumb-expand {
+  position:absolute; right:12px; bottom:12px; width:34px; height:34px;
+  display:grid; place-items:center; border:1px solid #ffffff35;
+  border-radius:50%; background:#131416e8; color:var(--lime); font-size:21px;
+}
+body#top #thumbnails .nw-thumb-slide:not(.is-current) .nw-thumb-expand { display:none; }
+body#top #thumbnails .nw-thumb-caption {
+  position:absolute; top:100%; left:0; right:0; display:block;
+  margin:14px 0 0; font-size:var(--type-caption,.875rem); line-height:1.45;
+  color:var(--muted,#bfc3c5); overflow-wrap:anywhere;
+}
+body#top #thumbnails .nw-thumb-slide:not(.is-current) .nw-thumb-caption { visibility:hidden; }
+body#top #thumbnails .nw-thumb-arrow {
+  position:absolute; top:calc(50% - 25px); transform:translateY(-50%);
+  display:grid; place-items:center; z-index:4; width:52px; height:52px;
+  padding:0; border:1px solid #ffffff28; border-radius:50%;
+  background:#1b2228ef; color:var(--lime); cursor:pointer;
+}
+body#top #thumbnails .nw-thumb-arrow svg { width:22px; height:22px; }
+body#top #thumbnails .nw-thumb-previous { left:8px; }
+body#top #thumbnails .nw-thumb-next { right:8px; }
+body#top #thumbnails .nw-thumb-arrow:hover { background:var(--lime); color:#101510; }
+body#top #thumbnails .nw-thumb-dots {
+  display:flex; justify-content:center; align-items:center; flex-wrap:wrap;
+  gap:0; width:100%; margin:2px auto 0;
+}
+body#top #thumbnails .nw-thumb-dots button {
+  display:grid; place-items:center; width:26px; height:30px; padding:0;
+  border:0; border-radius:5px; background:transparent; cursor:pointer;
+}
+body#top #thumbnails .nw-thumb-dots button::after {
+  content:""; width:7px; height:7px; border-radius:8px; background:#636367;
+}
+body#top #thumbnails .nw-thumb-dots button[aria-current="true"] { width:42px; }
+body#top #thumbnails .nw-thumb-dots button[aria-current="true"]::after { width:29px; background:var(--lime); }
+body#top #thumbnails :is(.nw-thumbnail-tabs button,.nw-thumb-slide,.nw-thumb-arrow,.nw-thumb-dots button):focus-visible {
+  outline:2px solid var(--lime); outline-offset:3px;
+}
+@media(max-width:640px) {
+  body#top #thumbnails .nw-thumbnail-tabs button { padding:10px 20px; }
+  body#top #thumbnails .nw-thumb-arrow { width:44px; height:44px; }
+  body#top #thumbnails .nw-thumb-previous { left:0; }
+  body#top #thumbnails .nw-thumb-next { right:0; }
+  body#top #thumbnails .nw-thumb-frame { border-radius:13px; }
+  body#top #thumbnails .nw-thumb-hint { font-size:.75rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body#top #thumbnails .nw-thumb-slide { transition:none; }
+}
+
+/* Display improvements for ALL existing video-thumbnail carousels.
+   Keep layout/media sizes intact; remove the deliberate 45% darkening. */
+body#top .carousel .slide.is-before,
+body#top .carousel .slide.is-after,
+body#top .carousel .slide.is-before:hover,
+body#top .carousel .slide.is-after:hover { opacity:1!important; }
+body#top .carousel .screen .thumbnail {
+  image-rendering:auto; filter:none!important; opacity:1!important;
+}
+/* Source image viewer: fit to the viewport or inspect real intrinsic pixels.
+   A larger dialog is NOT described as an upscaled/high-definition source. */
+body#top #portfolio-image-dialog .nw-image-tools {
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  gap:8px 14px; margin:0 0 14px; color:var(--muted); font-size:.75rem;
+}
+body#top #portfolio-image-dialog #nw-image-zoom {
+  min-height:40px; padding:8px 14px; border:1px solid #ffffff35;
+  border-radius:99px; background:#ffffff08; color:var(--white);
+  font:inherit; cursor:pointer;
+}
+body#top #portfolio-image-dialog #nw-image-zoom:focus-visible { outline:2px solid var(--lime); outline-offset:3px; }
+body#top #portfolio-image-dialog #nw-image-zoom:disabled { opacity:.5; cursor:default; }
+body#top #portfolio-image-dialog .nw-image-viewport {
+  width:100%; max-height:64dvh; overflow:auto; overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+}
+body#top #portfolio-image-dialog #portfolio-image-preview {
+  width:auto; height:auto; max-width:100%; max-height:64dvh;
+  margin-inline:auto; object-fit:contain; image-rendering:auto;
+}
+body#top #portfolio-image-dialog.is-native-size { width:min(1160px,94vw); }
+body#top #portfolio-image-dialog.is-native-size #portfolio-image-preview {
+  max-width:none; max-height:none; margin:0;
+}
