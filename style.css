@@ -3515,3 +3515,24 @@ body#top #portfolio-image-dialog.is-native-size { width:min(1160px,94vw); }
 body#top #portfolio-image-dialog.is-native-size #portfolio-image-preview {
   max-width:none; max-height:none; margin:0;
 }
+
+
+/* SELECTED RESULT — merge the former Featured Case Study into the hero proof card. */
+body#top .hero-proof-title {
+  margin: 0 0 18px;
+  max-width: 520px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+body#top .hero-proof-label {
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  body#top .hero-proof-title {
+    font-size: clamp(1.25rem, 6.2vw, 1.65rem);
+    margin-bottom: 16px;
+  }
+}
