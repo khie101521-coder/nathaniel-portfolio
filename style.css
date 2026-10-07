@@ -3819,3 +3819,190 @@ body#top #clients .nw-client-wide-brand-art img {
   body#top #clients .nw-client-wide-brand-art{height:32px!important;min-height:32px!important}
   body#top #clients .nw-client-wide-brand-art img{max-width:88px!important;max-height:30px!important}
 }
+
+
+/* COMPACT HERO → METRICS → SERVICES RHYTHM — 2026-10-07
+   Prevent the generic desktop section padding from creating large blank gaps.
+   Stats card sizing/content is preserved; only outer vertical spacing changes. */
+@media (min-width:901px) {
+  html:not(.phone-view) body#top main > .hero.section {
+    padding-bottom:36px !important;
+  }
+  html:not(.phone-view) body#top main > .nw-metrics.section {
+    padding-top:18px !important;
+    padding-bottom:18px !important;
+  }
+  html:not(.phone-view) body#top main > #services.section {
+    padding-top:34px !important;
+  }
+}
+@media (min-width:641px) and (max-width:900px) {
+  body#top main > .nw-metrics.section {
+    padding-top:22px !important;
+    padding-bottom:22px !important;
+  }
+  body#top main > #services.section {
+    padding-top:42px !important;
+  }
+}
+
+/* =========================================================
+   GLOBAL COMPACT SECTION RHYTHM — 2026-10-07
+   Reduces oversized vertical gaps without resizing cards,
+   carousels, media, portraits, logos, or content blocks.
+   ========================================================= */
+
+/* Desktop: tighter but still breathable major sections. */
+@media (min-width:901px) {
+  html:not(.phone-view) body#top main > .section:not(.hero):not(.nw-metrics) {
+    padding-top:56px !important;
+    padding-bottom:56px !important;
+  }
+
+  /* Hero / metrics / services transition stays especially tight. */
+  html:not(.phone-view) body#top main > .hero.section {
+    padding-bottom:34px !important;
+  }
+  html:not(.phone-view) body#top main > .nw-metrics.section {
+    padding-top:14px !important;
+    padding-bottom:14px !important;
+  }
+  html:not(.phone-view) body#top main > #services.section {
+    padding-top:30px !important;
+    padding-bottom:52px !important;
+  }
+
+  /* Portfolio library categories behave like one continuous body of work. */
+  html:not(.phone-view) body#top main > #works.section {
+    padding-top:52px !important;
+    padding-bottom:36px !important;
+  }
+  html:not(.phone-view) body#top main > #ai-assisted.section,
+  html:not(.phone-view) body#top main > #dtc-video-ads.section,
+  html:not(.phone-view) body#top main > #motion-graphics.section,
+  html:not(.phone-view) body#top main > #pru-life-uk-reels.section,
+  html:not(.phone-view) body#top main > #ugc-ads.section,
+  html:not(.phone-view) body#top main > #thumbnails.section,
+  html:not(.phone-view) body#top main > #animated-motion-static-ads.section {
+    padding-top:30px !important;
+    padding-bottom:30px !important;
+  }
+  html:not(.phone-view) body#top main > #static-ads.section {
+    padding-top:38px !important;
+    padding-bottom:38px !important;
+  }
+
+  /* Larger editorial sections keep slightly more breathing room. */
+  html:not(.phone-view) body#top main > #paid-ads.section,
+  html:not(.phone-view) body#top main > #brands.section,
+  html:not(.phone-view) body#top main > #clients.section,
+  html:not(.phone-view) body#top main > #achievements.section,
+  html:not(.phone-view) body#top main > #testimonials.section,
+  html:not(.phone-view) body#top main > #tools.section,
+  html:not(.phone-view) body#top main > #about.section {
+    padding-top:52px !important;
+    padding-bottom:52px !important;
+  }
+  html:not(.phone-view) body#top main > #book.section {
+    padding-top:60px !important;
+    padding-bottom:60px !important;
+  }
+
+  /* Heading-to-content spacing only; component dimensions are untouched. */
+  body#top .nw-section-head { margin-bottom:30px !important; }
+  body#top #works .short-block { margin-top:32px !important; }
+  body#top #works .carousel-block > .rail-heading { margin-bottom:16px !important; }
+  body#top #works .carousel-block:first-of-type > .rail-heading { margin-top:30px !important; }
+  body#top #works .short-block > .rail-heading { margin-top:0 !important; }
+  body#top #brands .brand-window { margin-top:34px !important; }
+  body#top #clients .nw-clients-wide-heading { margin-bottom:34px !important; }
+  body#top #testimonials .testimonial-grid { margin-top:32px !important; }
+  body#top .static-ads-heading { margin-bottom:30px !important; }
+
+  /* Contact had stacked spacer margins that created unnecessary blank space. */
+  body#top #book > p { margin-bottom:28px !important; }
+  body#top #book .nw-contact-note { margin-bottom:18px !important; }
+  body#top #book .nw-contact-spacer { margin-bottom:18px !important; }
+  body#top #book .contact-layout { margin-top:22px !important; }
+}
+
+/* Tablet: same compact rhythm, with comfortable touch spacing. */
+@media (min-width:641px) and (max-width:900px) {
+  body#top main > .section:not(.hero):not(.nw-metrics) {
+    padding-top:48px !important;
+    padding-bottom:48px !important;
+  }
+  body#top main > .hero.section { padding-bottom:38px !important; }
+  body#top main > .nw-metrics.section {
+    padding-top:16px !important;
+    padding-bottom:16px !important;
+  }
+  body#top main > #services.section { padding-top:34px !important; }
+  body#top main > #works.section { padding-bottom:34px !important; }
+  body#top main > #ai-assisted.section,
+  body#top main > #dtc-video-ads.section,
+  body#top main > #motion-graphics.section,
+  body#top main > #pru-life-uk-reels.section,
+  body#top main > #ugc-ads.section,
+  body#top main > #thumbnails.section,
+  body#top main > #animated-motion-static-ads.section {
+    padding-top:30px !important;
+    padding-bottom:30px !important;
+  }
+  body#top .nw-section-head { margin-bottom:30px !important; }
+  body#top #brands .brand-window { margin-top:32px !important; }
+  body#top #clients .nw-clients-wide-heading { margin-bottom:30px !important; }
+  body#top #testimonials .testimonial-grid { margin-top:30px !important; }
+}
+
+/* Phone: reduce page length without squeezing interactive elements. */
+@media (max-width:640px) {
+  body#top main > .section:not(.hero):not(.nw-metrics),
+  html.phone-view body#top main > .section:not(.hero):not(.nw-metrics) {
+    padding-top:42px !important;
+    padding-bottom:42px !important;
+  }
+  body#top main > .hero.section,
+  html.phone-view body#top main > .hero.section {
+    padding-top:50px !important;
+    padding-bottom:36px !important;
+  }
+  body#top main > .nw-metrics.section,
+  html.phone-view body#top main > .nw-metrics.section {
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+  }
+  body#top main > #services.section,
+  html.phone-view body#top main > #services.section { padding-top:34px !important; }
+  body#top main > #ai-assisted.section,
+  body#top main > #dtc-video-ads.section,
+  body#top main > #motion-graphics.section,
+  body#top main > #pru-life-uk-reels.section,
+  body#top main > #ugc-ads.section,
+  body#top main > #thumbnails.section,
+  body#top main > #animated-motion-static-ads.section,
+  html.phone-view body#top main > #ai-assisted.section,
+  html.phone-view body#top main > #dtc-video-ads.section,
+  html.phone-view body#top main > #motion-graphics.section,
+  html.phone-view body#top main > #pru-life-uk-reels.section,
+  html.phone-view body#top main > #ugc-ads.section,
+  html.phone-view body#top main > #thumbnails.section,
+  html.phone-view body#top main > #animated-motion-static-ads.section {
+    padding-top:28px !important;
+    padding-bottom:28px !important;
+  }
+  body#top .nw-section-head,
+  html.phone-view body#top .nw-section-head { margin-bottom:24px !important; }
+  body#top #works .short-block,
+  html.phone-view body#top #works .short-block { margin-top:24px !important; }
+  body#top #brands .brand-window,
+  html.phone-view body#top #brands .brand-window { margin-top:28px !important; }
+  body#top #clients .nw-clients-wide-heading,
+  html.phone-view body#top #clients .nw-clients-wide-heading { margin-bottom:26px !important; }
+  body#top #testimonials .testimonial-grid,
+  html.phone-view body#top #testimonials .testimonial-grid { margin-top:26px !important; }
+  body#top #book .nw-contact-spacer,
+  html.phone-view body#top #book .nw-contact-spacer { margin-bottom:14px !important; }
+  body#top #book .contact-layout,
+  html.phone-view body#top #book .contact-layout { margin-top:18px !important; }
+}

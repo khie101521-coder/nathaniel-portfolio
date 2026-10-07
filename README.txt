@@ -1,26 +1,15 @@
-NATHANIEL WORKS — LOGO VISIBILITY / ASPECT-RATIO FIX
+NATHANIEL WORKS — HERO COPY + COMPACT SPACING REVISION
 
-WHAT THIS FIXES
-- Restores all brand/client logo paths to the existing /assets root folder.
-- Removes the /assets/client-logos dependency that caused broken images when that folder was not pushed.
-- Replaces Brands-carousel SVG wrappers with normal IMG elements.
-- Preserves each PNG logo's original aspect ratio (no stretching).
-- Removes circle clipping / forced width+height from the Brands section.
-- Keeps the current Clients layout, portraits, navigation, and other revisions unchanged.
+HERO KICKER / TITLE
+CREATIVE VIDEO EDITOR · SHORT-FORM · LONG-FORM · DTC · SOCIAL
 
-GITHUB UPLOAD
-Replace:
-- index.html
-- style.css
+HERO DESCRIPTION
+I create short-form and long-form videos, VSL, DTC ads, UGC, educational content, and motion-led social edits built around strong hooks, clean pacing, and clear brand messaging.
 
-Also upload/overwrite these files inside /assets:
-- wise-cleaner-logo.png
-- wise-skin-logo.png
-- prulife-uk-logo.png
-- jasper-sky-royals-logo.png
-- muse-logo.png
-- highlevel-logo.png
-- idigital-creators-logo.png
+PRESERVED
+- All compact-spacing revisions across the portfolio
+- Existing layout, buttons, tags, navigation, logos, clients, testimonials, media sizes, and interactions
 
-Do NOT create an assets/client-logos folder for this fix.
-Keep script.js, portfolio-media.js, and all other assets unchanged.
+GITHUB
+Replace index.html and style.css in the repository root.
+Keep script.js, portfolio-media.js, assets/, and all other files unchanged.
