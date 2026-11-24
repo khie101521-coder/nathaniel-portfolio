@@ -5,8 +5,8 @@ document.querySelectorAll('[data-carousel]').forEach(carousel=>{
   const name=carousel.dataset.carousel;
   const dots=document.querySelector(`[data-dots="${name}"]`);
   const isImage=name==='thumbnails';
-  const multiPreview=['landscape','portrait','ai-assisted','dtc','motion','ugc','pru','animated-ads','thumbnails'].includes(name);
-  const format=name==='pru'?'PRU Life UK reel':name==='animated-ads'?'animated motion ad':name==='ai-assisted'?'AI-assisted':name==='ugc'?'UGC ad':name==='motion'?'motion graphics':name==='dtc'?'DTC ad':name==='landscape'?'long-form':'short-form';
+  const multiPreview=['landscape','portrait','ai-assisted','dtc','motion','ugc','pru','animated-ads','thumbnails','ai-ugc-ads','hyper-realistic-ai-ads','pixar-3d-ads','dtc-performance-ads'].includes(name);
+  const format=({'ai-ugc-ads':'AI UGC','hyper-realistic-ai-ads':'hyper-realistic AI','pixar-3d-ads':'3D animation','dtc-performance-ads':'DTC performance'})[name] || (name==='pru'?'PRU Life UK reel':name==='animated-ads'?'animated motion ad':name==='ai-assisted'?'AI-assisted':name==='ugc'?'UGC ad':name==='motion'?'motion graphics':name==='dtc'?'DTC ad':name==='landscape'?'long-form':'short-form');
   let current=0;
   slides.forEach((slide,i)=>{
     const dot=document.createElement('button');
@@ -44,7 +44,7 @@ document.querySelectorAll('[data-carousel]').forEach(carousel=>{
       slide.setAttribute('aria-hidden',String(!visible));
       slide.tabIndex=visible?0:-1;
       if(multiPreview){
-        slide.setAttribute('aria-label',isImage?(i===current?`View thumbnail ${i+1}`:`Preview thumbnail ${i+1}`):(i===current?`Watch ${format} video ${i+1}`:`Preview ${format} video ${i+1}`));
+        slide.setAttribute('aria-label',slide.dataset.pending==='true'?`${i===current?'Selected':'Preview'} ${format} video ${i+1} — coming soon`:isImage?(i===current?`View thumbnail ${i+1}`:`Preview thumbnail ${i+1}`):(i===current?`Watch ${format} video ${i+1}`:`Preview ${format} video ${i+1}`));
       }
       if(visible)slide.querySelector('img')?.setAttribute('loading','eager');
     });
