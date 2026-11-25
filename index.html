@@ -633,5 +633,122 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
 </div></section>
 </main><footer><a class="logo" href="#top"><img alt="Nathaniel Works logo" class="logo-mark" height="22" src="assets/nathaniel-works-logo.png" width="22"/><span>NATHANIEL <b>WORKS</b></span></a><span>© <span id="year">2026</span> NATHANIEL OCLARES</span><a href="#top">BACK TO TOP ↑</a></footer><dialog aria-labelledby="portfolio-video-title" class="video-dialog" id="portfolio-video-dialog"><div class="video-dialog-header"><h2 id="portfolio-video-title">UGC product &amp; demo ad</h2><button aria-label="Close video" class="video-dialog-close" type="button">✕</button></div><video aria-label="Selected UGC ad" controls="" id="portfolio-video-player" playsinline="" preload="none"></video><p class="video-dialog-error" hidden="">The video could not load. Try opening it directly below.</p><a class="video-direct-link" href="#" rel="noopener noreferrer" target="_blank">Open video in a new tab <span aria-hidden="true">↗</span></a></dialog><dialog aria-labelledby="portfolio-image-title" class="video-dialog image-dialog" id="portfolio-image-dialog"><div class="video-dialog-header"><h2 id="portfolio-image-title">Thumbnail</h2><button aria-label="Close thumbnail" class="video-dialog-close image-dialog-close" type="button">✕</button></div><div class="nw-image-tools"><button aria-pressed="false" disabled="" id="nw-image-zoom" type="button">View at 100%</button><span aria-live="polite" id="nw-image-resolution"></span></div>
 <div class="nw-image-viewport" id="nw-image-viewport"><img alt="" id="portfolio-image-preview"/></div><a class="video-direct-link image-direct-link" href="#" rel="noopener noreferrer" target="_blank">Open original image <span aria-hidden="true">↗</span></a></dialog><script src="script.js?v=20261124-performance-carousels"></script>
+<style id="nw-workflow-autoplay-v1">
+#ai-video-automation .nw-video-preview-wrap{position:relative;min-width:0;width:100%}
+#ai-video-automation .nw-video-preview-wrap .nw-workflow-preview{width:100%}
+#ai-video-automation .nw-workflow-preview video.nw-workflow-autoplay{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain;background:#11171c;opacity:0;pointer-events:none;transition:opacity .25s ease}
+#ai-video-automation .nw-workflow-preview.nw-is-playing video.nw-workflow-autoplay{opacity:1}
+#ai-video-automation .nw-preview-control{position:absolute;z-index:3;left:12px;bottom:12px;border:1px solid #ffffff60;border-radius:99px;background:#101510e8;color:#fff;padding:8px 12px;font:600 11px/1.3 'Space Grotesk',sans-serif;cursor:pointer}
+#ai-video-automation .nw-preview-control:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+#ai-video-automation .nw-preview-control[hidden]{display:none}
+#ai-video-automation .nw-preview-hint{position:absolute;z-index:2;right:12px;bottom:12px;border:1px solid #ffffff40;border-radius:99px;background:#101510df;color:#f5f6f5;padding:8px 12px;font:600 10px/1.3 'Space Grotesk',sans-serif;letter-spacing:.04em;pointer-events:none}
+#ai-video-automation .nw-preview-hint[hidden]{display:none}
+@media(max-width:480px){#ai-video-automation .nw-preview-control,#ai-video-automation .nw-preview-hint{bottom:7px;font-size:9px;padding:6px 8px}#ai-video-automation .nw-preview-control{left:7px}#ai-video-automation .nw-preview-hint{right:7px}}
+@media(prefers-reduced-motion:reduce){#ai-video-automation .nw-workflow-preview video.nw-workflow-autoplay{transition:none}}
+</style>
+<script>
+(() => {
+  'use strict';
+  const card = document.querySelector('#ai-video-automation > .nw-workflow-card:not(.nw-spaces-card)');
+  const link = card?.querySelector('.nw-workflow-preview');
+  const cta = card?.querySelector('.nw-workflow-cta');
+  const poster = link?.querySelector('img');
+  if (!link || !cta || !poster || !('HTMLVideoElement' in window)) return;
+  const src = 'assets/workflow/ai-production-showcase.mp4';
+  const original = [link.href, cta.href, link.getAttribute('aria-label')];
+  const wrap = document.createElement('div');
+  wrap.className = 'nw-video-preview-wrap';
+  link.before(wrap);
+  wrap.append(link);
+  const video = document.createElement('video');
+  video.className = 'nw-workflow-autoplay';
+  video.muted = true;
+  video.defaultMuted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = 'none';
+  video.setAttribute('muted','');
+  video.setAttribute('playsinline','');
+  video.setAttribute('aria-hidden','true');
+  video.poster = poster.src;
+  link.append(video);
+  const hint = document.createElement('span');
+  hint.className = 'nw-preview-hint';
+  hint.textContent = 'WATCH WITH SOUND ↗';
+  hint.hidden = true;
+  hint.setAttribute('aria-hidden','true');
+  link.append(hint);
+  const control = document.createElement('button');
+  control.className = 'nw-preview-control';
+  control.type = 'button';
+  control.hidden = true;
+  control.textContent = 'Pause preview';
+  wrap.append(control);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const dialog = document.getElementById('portfolio-video-dialog');
+  let active = false, requested = false, ready = false, failed = false;
+  let manualPause = reduced.matches;
+  const sync = () => {
+    const shouldPlay = ready && active && !manualPause && !document.hidden && !dialog?.open;
+    if (shouldPlay) {
+      video.play().catch(() => {
+        if (!video.paused || !ready) return;
+        manualPause = true;
+        control.textContent = 'Play preview';
+      });
+    } else video.pause();
+    control.textContent = manualPause ? 'Play preview' : 'Pause preview';
+  };
+  const load = () => {
+    if (requested || failed) return;
+    requested = true;
+    video.preload = 'metadata';
+    video.src = src;
+    video.load();
+  };
+  video.addEventListener('loadedmetadata', () => {
+    ready = true;
+    link.href = src; cta.href = src;
+    link.dataset.video = src;
+    link.dataset.title = 'AI Video Automation Workflow';
+    link.setAttribute('aria-label','Watch AI Video Automation Workflow with audio');
+    control.hidden = false;
+    hint.hidden = false;
+    sync();
+  });
+  video.addEventListener('playing', () => link.classList.add('nw-is-playing'));
+  video.addEventListener('error', () => {
+    ready = false; failed = true;
+    link.href = original[0]; cta.href = original[1];
+    link.setAttribute('aria-label', original[2] || 'Watch AI Video Automation Workflow');
+    delete link.dataset.video;
+    link.classList.remove('nw-is-playing');
+    control.hidden = true; hint.hidden = true;
+  });
+  control.addEventListener('click', () => { manualPause = !manualPause; sync(); });
+  const open = (event) => {
+    if (!ready || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || typeof window.openPortfolioVideo !== 'function' || !dialog?.showModal) return;
+    event.preventDefault();
+    video.pause();
+    window.openPortfolioVideo(link);
+  };
+  link.addEventListener('click',open);
+  cta.addEventListener('click',open);
+  dialog?.addEventListener('close',sync);
+  document.addEventListener('visibilitychange',sync);
+  reduced.addEventListener?.('change', e => { manualPause = e.matches; sync(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      active = entry.isIntersecting && entry.intersectionRatio >= .35;
+      if (active) load();
+      sync();
+    },{threshold:[0,.35]}).observe(wrap);
+  } else {
+    active = true;
+    load();
+  }
+})();
+</script>
+
 <script defer="" src="portfolio-media.js?v=20261007-thumbnails-tabs-clarity1"></script>
 </body></html>
