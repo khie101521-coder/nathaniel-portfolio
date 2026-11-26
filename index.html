@@ -69,31 +69,43 @@
 .nw-performance-block .slide-caption{white-space:normal;}
 </style>
 <style id="nw-ai-workflow-styles">
-#ai-video-automation{scroll-margin-top:120px;padding-top:38px;padding-bottom:38px}
-#ai-video-automation .nw-workflow-card{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,60px);align-items:center;padding:clamp(22px,4vw,48px);border:1px solid rgba(255,255,255,.13);border-radius:24px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018))}
-#ai-video-automation .nw-workflow-copy{min-width:0}
-#ai-video-automation h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,3.5vw,3.3rem);line-height:1.1;letter-spacing:-.045em;margin:14px 0 18px}
-#ai-video-automation .nw-workflow-copy p{color:#bfc0c2;line-height:1.65;max-width:510px;font-size:15px;margin:0 0 22px}
-#ai-video-automation .nw-service-tags{margin:0 0 26px}
-#ai-video-automation .nw-workflow-cta{display:inline-flex;width:auto;max-width:100%;box-sizing:border-box;text-decoration:none}
-#ai-video-automation .nw-workflow-preview{position:relative;min-width:0;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2vw,22px);padding:24px;box-sizing:border-box;overflow:hidden;border-radius:18px;border:1px solid #ffffff26;background:radial-gradient(ellipse at 16% 16%,#16404c,transparent 65%),radial-gradient(ellipse at 90% 80%,#39314e,transparent 70%),#171b20;color:#f5f6f5;text-decoration:none;transition:border-color .2s ease,background-color .2s ease}
+/* One workflow section, using the case-study layout and pill selector. */
+#ai-video-automation{scroll-margin-top:120px;padding-top:50px;padding-bottom:50px}
+#ai-video-automation .nw-workflow-layout{max-width:1240px;margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:center}
+#ai-video-automation .nw-workflow-copy,#ai-video-automation .nw-workflow-media{min-width:0}
+#ai-video-automation h2{line-height:1.1;letter-spacing:-.045em;margin:0 0 24px;text-wrap:balance}
+#ai-video-automation h2 span{color:var(--lime)}
+#ai-video-automation .underline{margin-bottom:28px}
+#ai-video-automation .nw-workflow-copy p{color:var(--muted);line-height:1.75;font-size:16px;margin:0 0 20px}
+#ai-video-automation .nw-workflow-details{border-top:1px solid #ffffff25;padding-top:22px;animation:nwWorkflowReveal .22s ease}
+#ai-video-automation .nw-workflow-details h3{margin:0 0 12px;font-size:18px;line-height:1.4;letter-spacing:-.02em}
+#ai-video-automation .nw-service-tags{margin:0}
+#ai-video-automation .nw-workflow-media{width:100%;max-width:580px;justify-self:center}
+#ai-video-automation .nw-workflow-tabs{display:flex;justify-content:center;width:fit-content;max-width:100%;gap:5px;margin:0 auto 24px;padding:5px;border:1px solid #ffffff26;border-radius:105px;background:#ffffff06}
+#ai-video-automation .nw-workflow-tabs button{min-width:0;min-height:44px;padding:11px 20px;border:0;border-radius:105px;background:transparent;color:#c4c9c6;font-size:var(--type-button,.875rem);line-height:1.5;font-weight:600;transition:background-color .18s ease,color .18s ease}
+#ai-video-automation .nw-workflow-tabs button[aria-selected="true"]{background:var(--lime);color:#101510}
+#ai-video-automation .nw-workflow-tabs button:hover{color:var(--white)}
+#ai-video-automation .nw-workflow-tabs button[aria-selected="true"]:hover{color:#101510}
+#ai-video-automation .nw-workflow-tabs button:focus-visible,#ai-video-automation .nw-workflow-preview:focus-visible,#ai-video-automation .nw-workflow-cta:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+#ai-video-automation [hidden]{display:none!important}
+#ai-video-automation [role="tabpanel"]{scroll-margin-top:120px;animation:nwWorkflowReveal .22s ease}
+#ai-video-automation .nw-workflow-post{margin:0;min-width:0}
+#ai-video-automation .nw-workflow-post figcaption{color:#bfc3c5;font-size:var(--type-micro,.6875rem);font-weight:700;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+#ai-video-automation .nw-workflow-preview{position:relative;min-width:0;aspect-ratio:16/9;display:block;overflow:hidden;border-radius:16px;border:1px solid #ffffff30;background:#11171c;color:var(--white);text-decoration:none;transition:border-color .2s ease}
 #ai-video-automation .nw-workflow-preview:hover{border-color:var(--lime)}
-#ai-video-automation .nw-workflow-preview:focus-visible,#ai-video-automation .nw-workflow-cta:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
-#ai-video-automation .nw-workflow-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;color:#c3c9cd;text-align:center}
-#ai-video-automation .nw-workflow-tools{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-family:'Space Grotesk',sans-serif;font-size:clamp(15px,2vw,23px);font-weight:700;letter-spacing:-.03em;text-align:center}
-#ai-video-automation .nw-workflow-plus{color:var(--lime);font-weight:500}
-#ai-video-automation .nw-workflow-play{width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;border-radius:50%;background:#101510c9;border:1px solid #ffffff55;color:var(--lime)}
+#ai-video-automation .nw-workflow-preview>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;transition:filter .2s ease}
+#ai-video-automation .nw-workflow-preview:hover>img{filter:brightness(1.06)}
+#ai-video-automation .nw-workflow-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;color:var(--lime);font-size:var(--type-button,.875rem);line-height:1.5;text-decoration:none}
+#ai-video-automation .nw-workflow-cta:hover{text-decoration:underline;text-underline-offset:4px}
+#ai-video-automation .nw-workflow-play{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#101510c9;border:1px solid #ffffff55;color:var(--lime)}
 #ai-video-automation .nw-workflow-play svg{width:22px;height:22px;margin-left:3px}
-#ai-video-automation .nw-workflow-note{font-size:11px;color:#aeb7bc;text-align:center;line-height:1.4}
-@media(max-width:760px){#ai-video-automation{padding-top:24px;padding-bottom:24px}#ai-video-automation .nw-workflow-card{grid-template-columns:minmax(0,1fr);gap:24px;margin-inline:18px;padding:22px;border-radius:20px}#ai-video-automation .nw-workflow-preview{padding:16px;min-height:190px;aspect-ratio:16/9}#ai-video-automation .nw-workflow-cta{width:100%;justify-content:center}#ai-video-automation h2{font-size:clamp(1.8rem,7vw,2.6rem)}}
-html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:minmax(0,1fr);gap:24px;margin-inline:18px;padding:22px}
-#ai-video-automation .nw-workflow-preview{padding:0!important;min-height:0!important;aspect-ratio:16/9;background:#11171c}
-#ai-video-automation .nw-workflow-preview img{transition:filter .2s ease}
-#ai-video-automation .nw-workflow-preview:hover img{filter:brightness(1.06)}
+@keyframes nwWorkflowReveal{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){#ai-video-automation .nw-workflow-layout{grid-template-columns:minmax(0,720px);justify-content:center;gap:30px}#ai-video-automation .nw-workflow-media{max-width:620px}}
+@media(max-width:480px){#ai-video-automation .nw-workflow-tabs{width:100%;gap:3px}#ai-video-automation .nw-workflow-tabs button{flex:1;padding:10px 8px;font-size:12px}#ai-video-automation .nw-workflow-preview{border-radius:13px}}
+html.phone-view #ai-video-automation .nw-workflow-layout{grid-template-columns:minmax(0,1fr);gap:28px}
+@media(prefers-reduced-motion:reduce){#ai-video-automation [role="tabpanel"],#ai-video-automation .nw-workflow-details{animation:none}#ai-video-automation .nw-workflow-tabs button,#ai-video-automation .nw-workflow-preview,#ai-video-automation .nw-workflow-preview>img{transition:none}}
 </style>
 <style id="nw-spaces-workflow-styles">
-#ai-video-automation .nw-spaces-card{margin-top:22px;scroll-margin-top:120px}
-#ai-video-automation .nw-spaces-card h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.9rem,3.5vw,3.3rem);line-height:1.1;letter-spacing:-.045em;margin:14px 0 18px}
 #ai-video-automation .nw-spaces-preview{container-type:inline-size;background:radial-gradient(ellipse at 12% 12%,#16404c,transparent 65%),radial-gradient(ellipse at 90% 80%,#39314e,transparent 70%),#171b20}
 #ai-video-automation .nw-spaces-cover{box-sizing:border-box;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:5% 5% 3%;gap:3%;overflow:hidden}
 #ai-video-automation .nw-spaces-cover-heading{display:flex;flex-direction:column;text-align:center;gap:4px;line-height:1.15}
@@ -107,7 +119,6 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
 #ai-video-automation .nw-spaces-outputs img{display:block;width:100%;height:100%;min-height:0;max-height:100%;object-fit:cover;border-radius:7px;border:1px solid #ffffff35;box-sizing:border-box}
 #ai-video-automation .nw-spaces-cover .nw-workflow-play{position:absolute;top:58%;left:50%;transform:translate(-50%,-50%);width:clamp(36px,10cqw,58px);height:clamp(36px,10cqw,58px);box-shadow:0 4px 18px #0007;z-index:1}
 #ai-video-automation .nw-spaces-cover-footer{text-align:center;font-size:clamp(6px,1.5cqw,10px);flex-shrink:0}
-@media(max-width:760px){#ai-video-automation .nw-spaces-card h3{font-size:clamp(1.8rem,7vw,2.6rem)}#ai-video-automation .nw-spaces-card{margin-top:18px}}
 </style>
 </head>
 <body id="top">
@@ -187,25 +198,39 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
 </div>
 </section>
 <section class="section nw-workflow-section" id="ai-video-automation" aria-labelledby="ai-video-automation-title">
-  <div class="nw-workflow-card">
+  <div class="nw-workflow-layout">
     <div class="nw-workflow-copy">
       <span class="kicker">BEHIND THE WORK &middot; AI VIDEO PRODUCTION</span>
-      <h2 id="ai-video-automation-title">AI Video Automation Workflow</h2>
-      <p>See how I use ChatGPT for creative planning and Magnific Spaces for node-based AI video production, from AI avatar workflows to short-form advertising content. My workflow demonstration shows how I organize references, prompts, generated assets and video outputs.</p>
-      <div class="nw-service-tags"><b>ChatGPT</b><b>Magnific AI</b><b>Magnific Spaces</b><b>AI Video Automation</b></div>
-      <a class="hero-primary nw-workflow-cta" href="https://f.io/Frx3TrMn" target="_blank" rel="noopener noreferrer">WATCH WORKFLOW DEMO <span aria-hidden="true">&#8599;</span></a>
+      <h2 id="ai-video-automation-title">AI Video <span>Production</span> Workflow</h2>
+      <span class="underline" aria-hidden="true"></span>
+      <p>From creative planning to the final video, see how I combine ChatGPT, Magnific AI, and traditional editing to create content for brands.</p>
+      <div class="nw-workflow-details" id="ai-workflow-automation-copy" data-workflow-copy="automation">
+        <h3>AI Video Automation</h3>
+        <p>Explore my production process, from creative strategy and prompt engineering to organized references, generated assets, and polished video outputs.</p>
+        <div class="nw-service-tags"><b>ChatGPT</b><b>Magnific AI</b><b>AI Video Automation</b><b>Video Editing</b></div>
+      </div>
+      <div class="nw-workflow-details" id="ai-workflow-spaces-copy" data-workflow-copy="spaces" hidden>
+        <h3>Hyper-Realistic AI Production</h3>
+        <p>Go behind the scenes in Magnific Spaces. See how I connect character and product references, prompts, and video generation to create consistent advertising visuals for e-commerce brands.</p>
+        <div class="nw-service-tags"><b>Magnific Spaces</b><b>Character Consistency</b><b>Product Integration</b><b>Creative Variations</b></div>
+      </div>
     </div>
-    <a class="nw-workflow-preview" href="https://f.io/Frx3TrMn" target="_blank" rel="noopener noreferrer" aria-label="Watch AI Video Automation Workflow demonstration on Frame.io (opens in new tab)"><img src="assets/workflow/ai-video-automation-thumbnail.webp" alt="AI Video Automation — ChatGPT and Magnific AI workflow illustration" width="1279" height="720" decoding="async" style="display:block;width:100%;height:100%;object-fit:contain;position:absolute;inset:0;"></a>
-  </div>
-  <div class="nw-workflow-card nw-spaces-card" id="magnific-spaces-workflow" aria-labelledby="magnific-spaces-workflow-title">
-    <div class="nw-workflow-copy">
-      <span class="kicker">BEHIND THE WORK &middot; MAGNIFIC SPACES</span>
-      <h3 id="magnific-spaces-workflow-title">Hyper-Realistic AI Production Workflow</h3>
-      <p>A behind-the-scenes look at my node-based workflow in Magnific Spaces, connecting character and product references, prompts, and video generation to develop hyper-realistic advertising creatives for e-commerce brands.</p>
-      <div class="nw-service-tags"><b>Magnific Spaces</b><b>Character Consistency</b><b>Product Integration</b><b>Creative Variations</b></div>
-      <a class="hero-primary nw-workflow-cta" href="https://f.io/8NA3N4Ko" target="_blank" rel="noopener noreferrer">WATCH SPACES WORKFLOW <span aria-hidden="true">&#8599;</span></a>
-    </div>
-    <a class="nw-workflow-preview nw-spaces-preview" href="https://f.io/8NA3N4Ko" target="_blank" rel="noopener noreferrer" aria-label="Watch Hyper-Realistic AI Production Workflow on Frame.io (opens in new tab)">
+    <div class="nw-workflow-media">
+      <div class="nw-workflow-tabs" role="tablist" aria-label="Explore my AI production workflows">
+        <button type="button" role="tab" id="ai-workflow-automation-tab" aria-controls="ai-workflow-automation-panel" aria-selected="true" data-workflow="automation">AI Video Automation</button>
+        <button type="button" role="tab" id="ai-workflow-spaces-tab" aria-controls="magnific-spaces-workflow" aria-selected="false" tabindex="-1" data-workflow="spaces">Magnific Spaces</button>
+      </div>
+      <div id="ai-workflow-automation-panel" role="tabpanel" aria-labelledby="ai-workflow-automation-tab" aria-describedby="ai-workflow-automation-copy">
+        <figure class="nw-workflow-post">
+          <figcaption>From concept to finished video</figcaption>
+          <a class="nw-workflow-preview" href="https://f.io/Frx3TrMn" target="_blank" rel="noopener noreferrer" aria-label="Watch AI Video Automation Workflow demonstration on Frame.io (opens in new tab)"><img src="assets/workflow/ai-video-automation-thumbnail.webp" alt="AI Video Automation: ChatGPT and Magnific AI workflow illustration" width="1279" height="720" decoding="async"></a>
+          <a class="nw-workflow-cta" href="https://f.io/Frx3TrMn" target="_blank" rel="noopener noreferrer">Watch workflow demo <span aria-hidden="true">&#8599;</span></a>
+        </figure>
+      </div>
+      <div id="magnific-spaces-workflow" role="tabpanel" aria-labelledby="ai-workflow-spaces-tab" aria-describedby="ai-workflow-spaces-copy" hidden>
+        <figure class="nw-workflow-post">
+          <figcaption>Inside Magnific Spaces</figcaption>
+          <a class="nw-workflow-preview nw-spaces-preview" href="https://f.io/8NA3N4Ko" target="_blank" rel="noopener noreferrer" aria-label="Watch Hyper-Realistic AI Production Workflow on Frame.io (opens in new tab)">
       <div class="nw-spaces-cover" aria-hidden="true">
         <div class="nw-spaces-cover-heading"><span>AI PRODUCTION &middot; BEHIND THE SCENES</span><strong>Magnific Spaces</strong><span>HYPER-REALISTIC VIDEO WORKFLOW</span></div>
         <div class="nw-spaces-cover-content">
@@ -215,7 +240,11 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
         <span class="nw-workflow-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3.5v17l14-8.5z"/></svg></span>
         <span class="nw-spaces-cover-footer">WATCH WORKFLOW DEMO &middot; FRAME.IO</span>
       </div>
-    </a>
+          </a>
+          <a class="nw-workflow-cta" href="https://f.io/8NA3N4Ko" target="_blank" rel="noopener noreferrer">Watch Spaces workflow <span aria-hidden="true">&#8599;</span></a>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>
 <section class="works section" id="works"><div aria-hidden="true" class="nw-swipe-note">SWIPE CAROUSELS ON MOBILE ↔</div><div class="section-title"><div><span class="kicker">PORTFOLIO LIBRARY</span><h2>Selected Edits</h2><span class="underline"></span></div><p>Browse projects by format, from long-form education and short-form social content to DTC ads, UGC, motion graphics, and static creatives.</p></div>
@@ -649,7 +678,51 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
 <script>
 (() => {
   'use strict';
-  const card = document.querySelector('#ai-video-automation > .nw-workflow-card:not(.nw-spaces-card)');
+  const section = document.getElementById('ai-video-automation');
+  const tabs = [...section.querySelectorAll('.nw-workflow-tabs [role="tab"]')];
+  const copies = [...section.querySelectorAll('[data-workflow-copy]')];
+  const select = (selected) => {
+    tabs.forEach(tab => {
+      const active = tab === selected;
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      panel.hidden = !active;
+      if (!active) panel.querySelectorAll('video').forEach(video => video.pause());
+    });
+    copies.forEach(copy => { copy.hidden = copy.dataset.workflowCopy !== selected.dataset.workflow; });
+    section.dispatchEvent(new Event('nw:workflow-change'));
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(tabs[next]);
+      tabs[next].focus();
+    });
+  });
+  const syncHash = () => {
+    const matchingTab = location.hash === '#magnific-spaces-workflow' ? tabs[1]
+      : ['#ai-video-automation', '#ai-workflow-automation-panel'].includes(location.hash) ? tabs[0] : null;
+    if (!matchingTab) return;
+    select(matchingTab);
+    requestAnimationFrame(() => section.scrollIntoView({block: 'start', behavior: 'instant'}));
+  };
+  window.addEventListener('hashchange', syncHash);
+  syncHash();
+})();
+</script>
+<script>
+(() => {
+  'use strict';
+  const section = document.getElementById('ai-video-automation');
+  const card = document.getElementById('ai-workflow-automation-panel');
   const link = card?.querySelector('.nw-workflow-preview');
   const cta = card?.querySelector('.nw-workflow-cta');
   const poster = link?.querySelector('img');
@@ -689,7 +762,7 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
   let active = false, requested = false, ready = false, failed = false;
   let manualPause = reduced.matches;
   const sync = () => {
-    const shouldPlay = ready && active && !manualPause && !document.hidden && !dialog?.open;
+    const shouldPlay = ready && active && !card.hidden && !manualPause && !document.hidden && !dialog?.open;
     if (shouldPlay) {
       video.play().catch(() => {
         if (!video.paused || !ready) return;
@@ -734,6 +807,7 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
   };
   link.addEventListener('click',open);
   cta.addEventListener('click',open);
+  section.addEventListener('nw:workflow-change', sync);
   dialog?.addEventListener('close',sync);
   document.addEventListener('visibilitychange',sync);
   reduced.addEventListener?.('change', e => { manualPause = e.matches; sync(); });
@@ -752,3 +826,4 @@ html.phone-view #ai-video-automation .nw-workflow-card{grid-template-columns:min
 
 <script defer="" src="portfolio-media.js?v=20261007-thumbnails-tabs-clarity1"></script>
 </body></html>
+
